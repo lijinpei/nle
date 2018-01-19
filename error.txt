@@ -1,0 +1,1919 @@
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp: In instantiation of ‘llvm::NodeLoopEquivalence<RT, AllocatorT>::DFSStackNodeT::DFSStackNodeT(llvm::NodeLoopEquivalence<RT, AllocatorT>::EdgeT, llvm::NodeLoopEquivalence<RT, AllocatorT>::TimeStepT&, bool) [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator; llvm::NodeLoopEquivalence<RT, AllocatorT>::TimeStepT = long unsigned int]’:
+bracket_list.hpp:372:17:   required from ‘void llvm::NodeLoopEquivalence<RT, AllocatorT>::dfsVisit() [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator]’
+bracket_list.hpp:449:13:   required from ‘llvm::NodeLoopEquivalence<RT, AllocatorT>::NodeLoopEquivalence(const FuncT&) [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator; llvm::NodeLoopEquivalence<RT, AllocatorT>::FuncT = llvm::Function]’
+bracket_list.hpp:487:57:   required from here
+bracket_list.hpp:275:16: error: ‘class llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::EdgeT’ has no member named ‘GetChildNode’; did you mean ‘getChildNode’?
+       if (Edge.GetChildNode().IsEntry()) {
+           ~~~~~^~~~~~~~~~~~
+           getChildNode
+bracket_list.hpp: In instantiation of ‘llvm::NodeLoopEquivalence<RT, AllocatorT>::dfsVisitStackTop()::<lambda(llvm::NodeLoopEquivalence<RT, AllocatorT>::EdgeT, bool)> [with llvm::NodeLoopEquivalence<RT, AllocatorT>::NodeKind NK = (llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)1; RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator]’:
+bracket_list.hpp:333:21:   required from ‘struct llvm::NodeLoopEquivalence<RT, AllocatorT>::dfsVisitStackTop() [with llvm::NodeLoopEquivalence<RT, AllocatorT>::NodeKind NK = (llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)1; RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator]::<lambda(class llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::EdgeT, bool)>’
+bracket_list.hpp:332:10:   required from ‘void llvm::NodeLoopEquivalence<RT, AllocatorT>::dfsVisitStackTop() [with llvm::NodeLoopEquivalence<RT, AllocatorT>::NodeKind NK = (llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)1; RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator]’
+bracket_list.hpp:377:35:   required from ‘void llvm::NodeLoopEquivalence<RT, AllocatorT>::dfsVisit() [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator]’
+bracket_list.hpp:449:13:   required from ‘llvm::NodeLoopEquivalence<RT, AllocatorT>::NodeLoopEquivalence(const FuncT&) [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator; llvm::NodeLoopEquivalence<RT, AllocatorT>::FuncT = llvm::Function]’
+bracket_list.hpp:487:57:   required from here
+bracket_list.hpp:335:31: error: no match for ‘operator=’ (operand types are ‘__gnu_cxx::__alloc_traits<std::allocator<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT> >::value_type {aka llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT}’ and ‘<brace-enclosed initializer list>’)
+         DFSStack[DFSStackTop] = {Edge, *insert.first};
+         ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+bracket_list.hpp:272:9: note: candidate: constexpr llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT& llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT::operator=(const llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT&)
+   class DFSStackNodeT {
+         ^~~~~~~~~~~~~
+bracket_list.hpp:272:9: note:   no known conversion for argument 1 from ‘<brace-enclosed initializer list>’ to ‘const llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT&’
+bracket_list.hpp:272:9: note: candidate: constexpr llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT& llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT::operator=(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT&&)
+bracket_list.hpp:272:9: note:   no known conversion for argument 1 from ‘<brace-enclosed initializer list>’ to ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT&&’
+bracket_list.hpp:336:9: error: no matching function for call to ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT::setPalVisited(bool&)’
+         DFSStack[DFSStackTop].setPalVisited(PalVisited);
+         ^~~~~~~~
+bracket_list.hpp:285:10: note: candidate: void llvm::NodeLoopEquivalence<RT, AllocatorT>::DFSStackNodeT::setPalVisited() [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator]
+     void setPalVisited() { DFSNumber.setInt(true); }
+          ^~~~~~~~~~~~~
+bracket_list.hpp:285:10: note:   candidate expects 0 arguments, 1 provided
+bracket_list.hpp: In instantiation of ‘void llvm::NodeLoopEquivalence<RT, AllocatorT>::dfsVisitStackTop() [with llvm::NodeLoopEquivalence<RT, AllocatorT>::NodeKind NK = (llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)1; RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator]’:
+bracket_list.hpp:377:35:   required from ‘void llvm::NodeLoopEquivalence<RT, AllocatorT>::dfsVisit() [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator]’
+bracket_list.hpp:449:13:   required from ‘llvm::NodeLoopEquivalence<RT, AllocatorT>::NodeLoopEquivalence(const FuncT&) [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator; llvm::NodeLoopEquivalence<RT, AllocatorT>::FuncT = llvm::Function]’
+bracket_list.hpp:487:57:   required from here
+bracket_list.hpp:343:14: error: ‘class llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT’ has no member named ‘getPalVisited’; did you mean ‘setPalVisited’?
+     if (!tos.getPalVisited()) {
+          ~~~~^~~~~~~~~~~~~
+          setPalVisited
+bracket_list.hpp:349:55: error: no match for ‘operator<’ (operand types are ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)1> {aka llvm::PredIterator<llvm::BasicBlock, llvm::Value::user_iterator_impl<llvm::User> >}’ and ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeKind’)
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/llvm/ADT/STLExtras.h:31:0,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/llvm/ADT/Optional.h:173:6: note: candidate: template<class T, class U> bool llvm::operator<(const llvm::Optional<T>&, const llvm::Optional<U>&)
+ bool operator<(const Optional<T> &X, const Optional<U> &Y) {
+      ^~~~~~~~
+/usr/include/llvm/ADT/Optional.h:173:6: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)1> {aka llvm::PredIterator<llvm::BasicBlock, llvm::Value::user_iterator_impl<llvm::User> >}’ is not derived from ‘const llvm::Optional<T>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/llvm/ADT/STLExtras.h:31:0,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/llvm/ADT/Optional.h:214:28: note: candidate: template<class T> bool llvm::operator<(const llvm::Optional<T>&, llvm::NoneType)
+ template <typename T> bool operator<(const Optional<T> &X, NoneType) {
+                            ^~~~~~~~
+/usr/include/llvm/ADT/Optional.h:214:28: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)1> {aka llvm::PredIterator<llvm::BasicBlock, llvm::Value::user_iterator_impl<llvm::User> >}’ is not derived from ‘const llvm::Optional<T>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/llvm/ADT/STLExtras.h:31:0,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/llvm/ADT/Optional.h:218:28: note: candidate: template<class T> bool llvm::operator<(llvm::NoneType, const llvm::Optional<T>&)
+ template <typename T> bool operator<(NoneType, const Optional<T> &X) {
+                            ^~~~~~~~
+/usr/include/llvm/ADT/Optional.h:218:28: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   mismatched types ‘const llvm::Optional<T>’ and ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeKind’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/llvm/ADT/STLExtras.h:31:0,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/llvm/ADT/Optional.h:262:28: note: candidate: template<class T> bool llvm::operator<(const llvm::Optional<T>&, const T&)
+ template <typename T> bool operator<(const Optional<T> &X, const T &Y) {
+                            ^~~~~~~~
+/usr/include/llvm/ADT/Optional.h:262:28: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)1> {aka llvm::PredIterator<llvm::BasicBlock, llvm::Value::user_iterator_impl<llvm::User> >}’ is not derived from ‘const llvm::Optional<T>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/llvm/ADT/STLExtras.h:31:0,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/llvm/ADT/Optional.h:266:28: note: candidate: template<class T> bool llvm::operator<(const T&, const llvm::Optional<T>&)
+ template <typename T> bool operator<(const T &X, const Optional<T> &Y) {
+                            ^~~~~~~~
+/usr/include/llvm/ADT/Optional.h:266:28: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   mismatched types ‘const llvm::Optional<T>’ and ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeKind’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/llvm/ADT/StringMap.h:17:0,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/llvm/ADT/StringRef.h:883:15: note: candidate: bool llvm::operator<(llvm::StringRef, llvm::StringRef)
+   inline bool operator<(StringRef LHS, StringRef RHS) {
+               ^~~~~~~~
+/usr/include/llvm/ADT/StringRef.h:883:15: note:   no known conversion for argument 1 from ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)1> {aka llvm::PredIterator<llvm::BasicBlock, llvm::Value::user_iterator_impl<llvm::User> >}’ to ‘llvm::StringRef’
+In file included from /usr/include/llvm/IR/Metadata.h:23:0,
+                 from /usr/include/llvm/IR/TrackingMDRef.h:17,
+                 from /usr/include/llvm/IR/DebugLoc.h:18,
+                 from /usr/include/llvm/IR/Instruction.h:22,
+                 from /usr/include/llvm/IR/BasicBlock.h:23,
+                 from /usr/include/llvm/Analysis/RegionInfo.h:45,
+                 from bracket_list.hpp:5,
+                 from bracket_list.cpp:1:
+/usr/include/llvm/ADT/PointerUnion.h:203:6: note: candidate: template<class PT1, class PT2> bool llvm::operator<(llvm::PointerUnion<PT1, PT2>, llvm::PointerUnion<PT1, PT2>)
+ bool operator<(PointerUnion<PT1, PT2> lhs, PointerUnion<PT1, PT2> rhs) {
+      ^~~~~~~~
+/usr/include/llvm/ADT/PointerUnion.h:203:6: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::PredIterator<llvm::BasicBlock, llvm::Value::user_iterator_impl<llvm::User> >’ is not derived from ‘llvm::PointerUnion<PT1, PT2>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/forward_list:38:0,
+                 from bracket_list.hpp:12,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/forward_list.h:1391:5: note: candidate: template<class _Tp, class _Alloc> bool std::operator<(const std::forward_list<_Tp, _Alloc>&, const std::forward_list<_Tp, _Alloc>&)
+     operator<(const forward_list<_Tp, _Alloc>& __lx,
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/forward_list.h:1391:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)1> {aka llvm::PredIterator<llvm::BasicBlock, llvm::Value::user_iterator_impl<llvm::User> >}’ is not derived from ‘const std::forward_list<_Tp, _Alloc>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/list:63:0,
+                 from /usr/include/llvm/IR/PassManager.h:55,
+                 from /usr/include/llvm/IR/Dominators.h:24,
+                 from /usr/include/llvm/Analysis/RegionInfo.h:46,
+                 from bracket_list.hpp:5,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_list.h:1918:5: note: candidate: template<class _Tp, class _Alloc> bool std::operator<(const std::__cxx11::list<_Tp, _Alloc>&, const std::__cxx11::list<_Tp, _Alloc>&)
+     operator<(const list<_Tp, _Alloc>& __x, const list<_Tp, _Alloc>& __y)
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/stl_list.h:1918:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)1> {aka llvm::PredIterator<llvm::BasicBlock, llvm::Value::user_iterator_impl<llvm::User> >}’ is not derived from ‘const std::__cxx11::list<_Tp, _Alloc>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/map:62:0,
+                 from /usr/include/llvm/IR/Attributes.h:29,
+                 from /usr/include/llvm/IR/Argument.h:19,
+                 from /usr/include/llvm/IR/Function.h:26,
+                 from /usr/include/llvm/IR/CFG.h:22,
+                 from /usr/include/llvm/IR/Dominators.h:23,
+                 from /usr/include/llvm/Analysis/RegionInfo.h:46,
+                 from bracket_list.hpp:5,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_multimap.h:1078:5: note: candidate: template<class _Key, class _Tp, class _Compare, class _Alloc> bool std::operator<(const std::multimap<_Key, _Tp, _Compare, _Alloc>&, const std::multimap<_Key, _Tp, _Compare, _Alloc>&)
+     operator<(const multimap<_Key, _Tp, _Compare, _Alloc>& __x,
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/stl_multimap.h:1078:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)1> {aka llvm::PredIterator<llvm::BasicBlock, llvm::Value::user_iterator_impl<llvm::User> >}’ is not derived from ‘const std::multimap<_Key, _Tp, _Compare, _Alloc>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/map:61:0,
+                 from /usr/include/llvm/IR/Attributes.h:29,
+                 from /usr/include/llvm/IR/Argument.h:19,
+                 from /usr/include/llvm/IR/Function.h:26,
+                 from /usr/include/llvm/IR/CFG.h:22,
+                 from /usr/include/llvm/IR/Dominators.h:23,
+                 from /usr/include/llvm/Analysis/RegionInfo.h:46,
+                 from bracket_list.hpp:5,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_map.h:1412:5: note: candidate: template<class _Key, class _Tp, class _Compare, class _Alloc> bool std::operator<(const std::map<_Key, _Tp, _Compare, _Alloc>&, const std::map<_Key, _Tp, _Compare, _Alloc>&)
+     operator<(const map<_Key, _Tp, _Compare, _Alloc>& __x,
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/stl_map.h:1412:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)1> {aka llvm::PredIterator<llvm::BasicBlock, llvm::Value::user_iterator_impl<llvm::User> >}’ is not derived from ‘const std::map<_Key, _Tp, _Compare, _Alloc>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/set:62:0,
+                 from /usr/include/llvm/ADT/DepthFirstIterator.h:42,
+                 from /usr/include/llvm/Analysis/RegionInfo.h:41,
+                 from bracket_list.hpp:5,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_multiset.h:913:5: note: candidate: template<class _Key, class _Compare, class _Alloc> bool std::operator<(const std::multiset<_Key, _Compare, _Alloc>&, const std::multiset<_Key, _Compare, _Alloc>&)
+     operator<(const multiset<_Key, _Compare, _Alloc>& __x,
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/stl_multiset.h:913:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)1> {aka llvm::PredIterator<llvm::BasicBlock, llvm::Value::user_iterator_impl<llvm::User> >}’ is not derived from ‘const std::multiset<_Key, _Compare, _Alloc>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/set:61:0,
+                 from /usr/include/llvm/ADT/DepthFirstIterator.h:42,
+                 from /usr/include/llvm/Analysis/RegionInfo.h:41,
+                 from bracket_list.hpp:5,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_set.h:930:5: note: candidate: template<class _Key, class _Compare, class _Alloc> bool std::operator<(const std::set<_Key, _Compare, _Alloc>&, const std::set<_Key, _Compare, _Alloc>&)
+     operator<(const set<_Key, _Compare, _Alloc>& __x,
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/stl_set.h:930:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)1> {aka llvm::PredIterator<llvm::BasicBlock, llvm::Value::user_iterator_impl<llvm::User> >}’ is not derived from ‘const std::set<_Key, _Compare, _Alloc>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/set:60:0,
+                 from /usr/include/llvm/ADT/DepthFirstIterator.h:42,
+                 from /usr/include/llvm/Analysis/RegionInfo.h:41,
+                 from bracket_list.hpp:5,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_tree.h:1543:5: note: candidate: template<class _Key, class _Val, class _KeyOfValue, class _Compare, class _Alloc> bool std::operator<(const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>&, const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>&)
+     operator<(const _Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>& __x,
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/stl_tree.h:1543:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)1> {aka llvm::PredIterator<llvm::BasicBlock, llvm::Value::user_iterator_impl<llvm::User> >}’ is not derived from ‘const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/vector:64:0,
+                 from /usr/include/llvm/ADT/ArrayRef.h:26,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_vector.h:1613:5: note: candidate: template<class _Tp, class _Alloc> bool std::operator<(const std::vector<_Tp, _Alloc>&, const std::vector<_Tp, _Alloc>&)
+     operator<(const vector<_Tp, _Alloc>& __x, const vector<_Tp, _Alloc>& __y)
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/stl_vector.h:1613:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)1> {aka llvm::PredIterator<llvm::BasicBlock, llvm::Value::user_iterator_impl<llvm::User> >}’ is not derived from ‘const std::vector<_Tp, _Alloc>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/memory:81:0,
+                 from /usr/include/llvm/ADT/STLExtras.h:27,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/shared_ptr.h:416:5: note: candidate: template<class _Tp> bool std::operator<(std::nullptr_t, const std::shared_ptr<_Tp>&)
+     operator<(nullptr_t, const shared_ptr<_Tp>& __a) noexcept
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/shared_ptr.h:416:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   mismatched types ‘const std::shared_ptr<_Tp>’ and ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeKind’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/memory:81:0,
+                 from /usr/include/llvm/ADT/STLExtras.h:27,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/shared_ptr.h:408:5: note: candidate: template<class _Tp> bool std::operator<(const std::shared_ptr<_Tp>&, std::nullptr_t)
+     operator<(const shared_ptr<_Tp>& __a, nullptr_t) noexcept
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/shared_ptr.h:408:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)1> {aka llvm::PredIterator<llvm::BasicBlock, llvm::Value::user_iterator_impl<llvm::User> >}’ is not derived from ‘const std::shared_ptr<_Tp>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/memory:81:0,
+                 from /usr/include/llvm/ADT/STLExtras.h:27,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/shared_ptr.h:398:5: note: candidate: template<class _Tp, class _Up> bool std::operator<(const std::shared_ptr<_Tp>&, const std::shared_ptr<_Up>&)
+     operator<(const shared_ptr<_Tp>& __a, const shared_ptr<_Up>& __b) noexcept
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/shared_ptr.h:398:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)1> {aka llvm::PredIterator<llvm::BasicBlock, llvm::Value::user_iterator_impl<llvm::User> >}’ is not derived from ‘const std::shared_ptr<_Tp>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/bits/shared_ptr.h:52:0,
+                 from /usr/include/c++/7.2.1/memory:81,
+                 from /usr/include/llvm/ADT/STLExtras.h:27,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/shared_ptr_base.h:1460:5: note: candidate: template<class _Tp, __gnu_cxx::_Lock_policy _Lp> bool std::operator<(std::nullptr_t, const std::__shared_ptr<_Tp, _Lp>&)
+     operator<(nullptr_t, const __shared_ptr<_Tp, _Lp>& __a) noexcept
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/shared_ptr_base.h:1460:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   mismatched types ‘const std::__shared_ptr<_Tp, _Lp>’ and ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeKind’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/bits/shared_ptr.h:52:0,
+                 from /usr/include/c++/7.2.1/memory:81,
+                 from /usr/include/llvm/ADT/STLExtras.h:27,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/shared_ptr_base.h:1452:5: note: candidate: template<class _Tp, __gnu_cxx::_Lock_policy _Lp> bool std::operator<(const std::__shared_ptr<_Tp, _Lp>&, std::nullptr_t)
+     operator<(const __shared_ptr<_Tp, _Lp>& __a, nullptr_t) noexcept
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/shared_ptr_base.h:1452:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)1> {aka llvm::PredIterator<llvm::BasicBlock, llvm::Value::user_iterator_impl<llvm::User> >}’ is not derived from ‘const std::__shared_ptr<_Tp, _Lp>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/bits/shared_ptr.h:52:0,
+                 from /usr/include/c++/7.2.1/memory:81,
+                 from /usr/include/llvm/ADT/STLExtras.h:27,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/shared_ptr_base.h:1441:5: note: candidate: template<class _Tp, class _Up, __gnu_cxx::_Lock_policy _Lp> bool std::operator<(const std::__shared_ptr<_Tp1, _Lp>&, const std::__shared_ptr<_Tp2, _Lp>&)
+     operator<(const __shared_ptr<_Tp, _Lp>& __a,
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/shared_ptr_base.h:1441:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)1> {aka llvm::PredIterator<llvm::BasicBlock, llvm::Value::user_iterator_impl<llvm::User> >}’ is not derived from ‘const std::__shared_ptr<_Tp1, _Lp>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/memory:80:0,
+                 from /usr/include/llvm/ADT/STLExtras.h:27,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/unique_ptr.h:734:5: note: candidate: template<class _Tp, class _Dp> bool std::operator<(std::nullptr_t, const std::unique_ptr<_Tp, _Dp>&)
+     operator<(nullptr_t, const unique_ptr<_Tp, _Dp>& __x)
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/unique_ptr.h:734:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   mismatched types ‘const std::unique_ptr<_Tp, _Dp>’ and ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeKind’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/memory:80:0,
+                 from /usr/include/llvm/ADT/STLExtras.h:27,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/unique_ptr.h:728:5: note: candidate: template<class _Tp, class _Dp> bool std::operator<(const std::unique_ptr<_Tp, _Dp>&, std::nullptr_t)
+     operator<(const unique_ptr<_Tp, _Dp>& __x, nullptr_t)
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/unique_ptr.h:728:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)1> {aka llvm::PredIterator<llvm::BasicBlock, llvm::Value::user_iterator_impl<llvm::User> >}’ is not derived from ‘const std::unique_ptr<_Tp, _Dp>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/memory:80:0,
+                 from /usr/include/llvm/ADT/STLExtras.h:27,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/unique_ptr.h:717:5: note: candidate: template<class _Tp, class _Dp, class _Up, class _Ep> bool std::operator<(const std::unique_ptr<_Tp, _Dp>&, const std::unique_ptr<_Up, _Ep>&)
+     operator<(const unique_ptr<_Tp, _Dp>& __x,
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/unique_ptr.h:717:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)1> {aka llvm::PredIterator<llvm::BasicBlock, llvm::Value::user_iterator_impl<llvm::User> >}’ is not derived from ‘const std::unique_ptr<_Tp, _Dp>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/bits/ios_base.h:46:0,
+                 from /usr/include/c++/7.2.1/ios:42,
+                 from /usr/include/c++/7.2.1/ostream:38,
+                 from /usr/include/c++/7.2.1/iterator:64,
+                 from /usr/include/llvm/ADT/STLExtras.h:25,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/system_error:282:3: note: candidate: bool std::operator<(const std::error_condition&, const std::error_condition&)
+   operator<(const error_condition& __lhs,
+   ^~~~~~~~
+/usr/include/c++/7.2.1/system_error:282:3: note:   no known conversion for argument 1 from ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)1> {aka llvm::PredIterator<llvm::BasicBlock, llvm::Value::user_iterator_impl<llvm::User> >}’ to ‘const std::error_condition&’
+/usr/include/c++/7.2.1/system_error:208:3: note: candidate: bool std::operator<(const std::error_code&, const std::error_code&)
+   operator<(const error_code& __lhs, const error_code& __rhs) noexcept
+   ^~~~~~~~
+/usr/include/c++/7.2.1/system_error:208:3: note:   no known conversion for argument 1 from ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)1> {aka llvm::PredIterator<llvm::BasicBlock, llvm::Value::user_iterator_impl<llvm::User> >}’ to ‘const std::error_code&’
+In file included from /usr/include/c++/7.2.1/functional:54:0,
+                 from /usr/include/llvm/ADT/STLExtras.h:24,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/tuple:1410:5: note: candidate: template<class ... _TElements, class ... _UElements> constexpr bool std::operator<(const std::tuple<_Tps ...>&, const std::tuple<_Elements ...>&)
+     operator<(const tuple<_TElements...>& __t,
+     ^~~~~~~~
+/usr/include/c++/7.2.1/tuple:1410:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)1> {aka llvm::PredIterator<llvm::BasicBlock, llvm::Value::user_iterator_impl<llvm::User> >}’ is not derived from ‘const std::tuple<_Tps ...>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/tuple:39:0,
+                 from /usr/include/c++/7.2.1/functional:54,
+                 from /usr/include/llvm/ADT/STLExtras.h:24,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/array:262:5: note: candidate: template<class _Tp, long unsigned int _Nm> bool std::operator<(const std::array<_Tp, _Nm>&, const std::array<_Tp, _Nm>&)
+     operator<(const array<_Tp, _Nm>& __a, const array<_Tp, _Nm>& __b)
+     ^~~~~~~~
+/usr/include/c++/7.2.1/array:262:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)1> {aka llvm::PredIterator<llvm::BasicBlock, llvm::Value::user_iterator_impl<llvm::User> >}’ is not derived from ‘const std::array<_Tp, _Nm>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/string:52:0,
+                 from /usr/include/c++/7.2.1/stdexcept:39,
+                 from /usr/include/c++/7.2.1/array:39,
+                 from /usr/include/c++/7.2.1/tuple:39,
+                 from /usr/include/c++/7.2.1/functional:54,
+                 from /usr/include/llvm/ADT/STLExtras.h:24,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/basic_string.h:6107:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> bool std::operator<(const _CharT*, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator<(const _CharT* __lhs,
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/basic_string.h:6107:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   mismatched types ‘const _CharT*’ and ‘llvm::PredIterator<llvm::BasicBlock, llvm::Value::user_iterator_impl<llvm::User> >’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/string:52:0,
+                 from /usr/include/c++/7.2.1/stdexcept:39,
+                 from /usr/include/c++/7.2.1/array:39,
+                 from /usr/include/c++/7.2.1/tuple:39,
+                 from /usr/include/c++/7.2.1/functional:54,
+                 from /usr/include/llvm/ADT/STLExtras.h:24,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/basic_string.h:6095:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> bool std::operator<(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*)
+     operator<(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/basic_string.h:6095:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)1> {aka llvm::PredIterator<llvm::BasicBlock, llvm::Value::user_iterator_impl<llvm::User> >}’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/string:52:0,
+                 from /usr/include/c++/7.2.1/stdexcept:39,
+                 from /usr/include/c++/7.2.1/array:39,
+                 from /usr/include/c++/7.2.1/tuple:39,
+                 from /usr/include/c++/7.2.1/functional:54,
+                 from /usr/include/llvm/ADT/STLExtras.h:24,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/basic_string.h:6082:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> bool std::operator<(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator<(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/basic_string.h:6082:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)1> {aka llvm::PredIterator<llvm::BasicBlock, llvm::Value::user_iterator_impl<llvm::User> >}’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7.2.1/algorithm:61,
+                 from /usr/include/llvm/ADT/STLExtras.h:20,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_iterator.h:1148:5: note: candidate: template<class _Iterator> bool std::operator<(const std::move_iterator<_IteratorL>&, const std::move_iterator<_IteratorL>&)
+     operator<(const move_iterator<_Iterator>& __x,
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/stl_iterator.h:1148:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)1> {aka llvm::PredIterator<llvm::BasicBlock, llvm::Value::user_iterator_impl<llvm::User> >}’ is not derived from ‘const std::move_iterator<_IteratorL>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7.2.1/algorithm:61,
+                 from /usr/include/llvm/ADT/STLExtras.h:20,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_iterator.h:1142:5: note: candidate: template<class _IteratorL, class _IteratorR> bool std::operator<(const std::move_iterator<_IteratorL>&, const std::move_iterator<_IteratorR>&)
+     operator<(const move_iterator<_IteratorL>& __x,
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/stl_iterator.h:1142:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)1> {aka llvm::PredIterator<llvm::BasicBlock, llvm::Value::user_iterator_impl<llvm::User> >}’ is not derived from ‘const std::move_iterator<_IteratorL>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7.2.1/algorithm:61,
+                 from /usr/include/llvm/ADT/STLExtras.h:20,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_iterator.h:343:5: note: candidate: template<class _IteratorL, class _IteratorR> bool std::operator<(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)
+     operator<(const reverse_iterator<_IteratorL>& __x,
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/stl_iterator.h:343:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)1> {aka llvm::PredIterator<llvm::BasicBlock, llvm::Value::user_iterator_impl<llvm::User> >}’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7.2.1/algorithm:61,
+                 from /usr/include/llvm/ADT/STLExtras.h:20,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_iterator.h:305:5: note: candidate: template<class _Iterator> bool std::operator<(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_Iterator>&)
+     operator<(const reverse_iterator<_Iterator>& __x,
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/stl_iterator.h:305:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)1> {aka llvm::PredIterator<llvm::BasicBlock, llvm::Value::user_iterator_impl<llvm::User> >}’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/utility:70:0,
+                 from /usr/include/c++/7.2.1/algorithm:60,
+                 from /usr/include/llvm/ADT/STLExtras.h:20,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_pair.h:449:5: note: candidate: template<class _T1, class _T2> constexpr bool std::operator<(const std::pair<_T1, _T2>&, const std::pair<_T1, _T2>&)
+     operator<(const pair<_T1, _T2>& __x, const pair<_T1, _T2>& __y)
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/stl_pair.h:449:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)1> {aka llvm::PredIterator<llvm::BasicBlock, llvm::Value::user_iterator_impl<llvm::User> >}’ is not derived from ‘const std::pair<_T1, _T2>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+bracket_list.hpp:350:27: error: no matching function for call to ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::getEdge(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)1>&)’
+       if (tryVisit(getEdge(child), true)) {
+                    ~~~~~~~^~~~~~~
+bracket_list.hpp:329:9: note: candidate: template<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeKind NK> llvm::NodeLoopEquivalence<RT, AllocatorT>::EdgeT llvm::NodeLoopEquivalence<RT, AllocatorT>::getEdge(llvm::NodeLoopEquivalence<RT, AllocatorT>::ItorT<NK>) [with llvm::NodeLoopEquivalence<RT, AllocatorT>::NodeKind NK = NK; RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator]
+   EdgeT getEdge(ItorT<NK> itor) { return {&*itor, false}; }
+         ^~~~~~~
+bracket_list.hpp:329:9: note:   template argument deduction/substitution failed:
+bracket_list.hpp:350:27: note:   couldn't deduce template parameter ‘NK’
+       if (tryVisit(getEdge(child), true)) {
+                    ~~~~~~~^~~~~~~
+bracket_list.hpp:355:28: error: use of deleted function ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSNodeT& llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSNodeT::operator=(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSNodeT&&)’
+     DFSQueue[DFS_Number++] = {tos.getEdge(), Allocator};
+     ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bracket_list.hpp:236:9: note: ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSNodeT& llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSNodeT::operator=(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSNodeT&&)’ is implicitly deleted because the default definition would be ill-formed:
+   class DFSNodeT {
+         ^~~~~~~~
+bracket_list.hpp:236:9: error: use of deleted function ‘llvm::internal::BracketListT<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >, llvm::MallocAllocator>& llvm::internal::BracketListT<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >, llvm::MallocAllocator>::operator=(llvm::internal::BracketListT<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >, llvm::MallocAllocator>&&)’
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:100:9: note: ‘llvm::internal::BracketListT<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >, llvm::MallocAllocator>& llvm::internal::BracketListT<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >, llvm::MallocAllocator>::operator=(llvm::internal::BracketListT<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >, llvm::MallocAllocator>&&)’ is implicitly deleted because the default definition would be ill-formed:
+   class BracketListT {
+         ^~~~~~~~~~~~
+bracket_list.hpp:100:9: error: non-static reference member ‘llvm::MallocAllocator& llvm::internal::BracketListT<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >, llvm::MallocAllocator>::Allocator’, can’t use default assignment operator
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp: In instantiation of ‘llvm::NodeLoopEquivalence<RT, AllocatorT>::dfsVisitStackTop()::<lambda(llvm::NodeLoopEquivalence<RT, AllocatorT>::EdgeT, bool)> [with llvm::NodeLoopEquivalence<RT, AllocatorT>::NodeKind NK = (llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)0; RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator]’:
+bracket_list.hpp:333:21:   required from ‘struct llvm::NodeLoopEquivalence<RT, AllocatorT>::dfsVisitStackTop() [with llvm::NodeLoopEquivalence<RT, AllocatorT>::NodeKind NK = (llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)0; RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator]::<lambda(class llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::EdgeT, bool)>’
+bracket_list.hpp:332:10:   required from ‘void llvm::NodeLoopEquivalence<RT, AllocatorT>::dfsVisitStackTop() [with llvm::NodeLoopEquivalence<RT, AllocatorT>::NodeKind NK = (llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)0; RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator]’
+bracket_list.hpp:379:34:   required from ‘void llvm::NodeLoopEquivalence<RT, AllocatorT>::dfsVisit() [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator]’
+bracket_list.hpp:449:13:   required from ‘llvm::NodeLoopEquivalence<RT, AllocatorT>::NodeLoopEquivalence(const FuncT&) [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator; llvm::NodeLoopEquivalence<RT, AllocatorT>::FuncT = llvm::Function]’
+bracket_list.hpp:487:57:   required from here
+bracket_list.hpp:335:31: error: no match for ‘operator=’ (operand types are ‘__gnu_cxx::__alloc_traits<std::allocator<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT> >::value_type {aka llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT}’ and ‘<brace-enclosed initializer list>’)
+         DFSStack[DFSStackTop] = {Edge, *insert.first};
+         ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+bracket_list.hpp:272:9: note: candidate: constexpr llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT& llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT::operator=(const llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT&)
+   class DFSStackNodeT {
+         ^~~~~~~~~~~~~
+bracket_list.hpp:272:9: note:   no known conversion for argument 1 from ‘<brace-enclosed initializer list>’ to ‘const llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT&’
+bracket_list.hpp:272:9: note: candidate: constexpr llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT& llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT::operator=(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT&&)
+bracket_list.hpp:272:9: note:   no known conversion for argument 1 from ‘<brace-enclosed initializer list>’ to ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT&&’
+bracket_list.hpp:336:9: error: no matching function for call to ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT::setPalVisited(bool&)’
+         DFSStack[DFSStackTop].setPalVisited(PalVisited);
+         ^~~~~~~~
+bracket_list.hpp:285:10: note: candidate: void llvm::NodeLoopEquivalence<RT, AllocatorT>::DFSStackNodeT::setPalVisited() [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator]
+     void setPalVisited() { DFSNumber.setInt(true); }
+          ^~~~~~~~~~~~~
+bracket_list.hpp:285:10: note:   candidate expects 0 arguments, 1 provided
+bracket_list.hpp: In instantiation of ‘void llvm::NodeLoopEquivalence<RT, AllocatorT>::dfsVisitStackTop() [with llvm::NodeLoopEquivalence<RT, AllocatorT>::NodeKind NK = (llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)0; RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator]’:
+bracket_list.hpp:379:34:   required from ‘void llvm::NodeLoopEquivalence<RT, AllocatorT>::dfsVisit() [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator]’
+bracket_list.hpp:449:13:   required from ‘llvm::NodeLoopEquivalence<RT, AllocatorT>::NodeLoopEquivalence(const FuncT&) [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator; llvm::NodeLoopEquivalence<RT, AllocatorT>::FuncT = llvm::Function]’
+bracket_list.hpp:487:57:   required from here
+bracket_list.hpp:343:14: error: ‘class llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT’ has no member named ‘getPalVisited’; did you mean ‘setPalVisited’?
+     if (!tos.getPalVisited()) {
+          ~~~~^~~~~~~~~~~~~
+          setPalVisited
+bracket_list.hpp:349:55: error: no match for ‘operator<’ (operand types are ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)0> {aka llvm::TerminatorInst::SuccIterator<llvm::TerminatorInst*, llvm::BasicBlock>}’ and ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeKind’)
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/llvm/IR/CFG.h:23:0,
+                 from /usr/include/llvm/IR/Dominators.h:23,
+                 from /usr/include/llvm/Analysis/RegionInfo.h:46,
+                 from bracket_list.hpp:5,
+                 from bracket_list.cpp:1:
+/usr/include/llvm/IR/InstrTypes.h:190:17: note: candidate: bool llvm::TerminatorInst::SuccIterator<Term, BB>::operator<(const Self&) const [with Term = llvm::TerminatorInst*; BB = llvm::BasicBlock; llvm::TerminatorInst::SuccIterator<Term, BB>::Self = llvm::TerminatorInst::SuccIterator<llvm::TerminatorInst*, llvm::BasicBlock>]
+     inline bool operator<(const Self &x) const {
+                 ^~~~~~~~
+/usr/include/llvm/IR/InstrTypes.h:190:17: note:   no known conversion for argument 1 from ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeKind’ to ‘const Self& {aka const llvm::TerminatorInst::SuccIterator<llvm::TerminatorInst*, llvm::BasicBlock>&}’
+In file included from /usr/include/llvm/ADT/STLExtras.h:31:0,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/llvm/ADT/Optional.h:173:6: note: candidate: template<class T, class U> bool llvm::operator<(const llvm::Optional<T>&, const llvm::Optional<U>&)
+ bool operator<(const Optional<T> &X, const Optional<U> &Y) {
+      ^~~~~~~~
+/usr/include/llvm/ADT/Optional.h:173:6: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)0> {aka llvm::TerminatorInst::SuccIterator<llvm::TerminatorInst*, llvm::BasicBlock>}’ is not derived from ‘const llvm::Optional<T>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/llvm/ADT/STLExtras.h:31:0,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/llvm/ADT/Optional.h:214:28: note: candidate: template<class T> bool llvm::operator<(const llvm::Optional<T>&, llvm::NoneType)
+ template <typename T> bool operator<(const Optional<T> &X, NoneType) {
+                            ^~~~~~~~
+/usr/include/llvm/ADT/Optional.h:214:28: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)0> {aka llvm::TerminatorInst::SuccIterator<llvm::TerminatorInst*, llvm::BasicBlock>}’ is not derived from ‘const llvm::Optional<T>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/llvm/ADT/STLExtras.h:31:0,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/llvm/ADT/Optional.h:218:28: note: candidate: template<class T> bool llvm::operator<(llvm::NoneType, const llvm::Optional<T>&)
+ template <typename T> bool operator<(NoneType, const Optional<T> &X) {
+                            ^~~~~~~~
+/usr/include/llvm/ADT/Optional.h:218:28: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   mismatched types ‘const llvm::Optional<T>’ and ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeKind’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/llvm/ADT/STLExtras.h:31:0,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/llvm/ADT/Optional.h:262:28: note: candidate: template<class T> bool llvm::operator<(const llvm::Optional<T>&, const T&)
+ template <typename T> bool operator<(const Optional<T> &X, const T &Y) {
+                            ^~~~~~~~
+/usr/include/llvm/ADT/Optional.h:262:28: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)0> {aka llvm::TerminatorInst::SuccIterator<llvm::TerminatorInst*, llvm::BasicBlock>}’ is not derived from ‘const llvm::Optional<T>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/llvm/ADT/STLExtras.h:31:0,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/llvm/ADT/Optional.h:266:28: note: candidate: template<class T> bool llvm::operator<(const T&, const llvm::Optional<T>&)
+ template <typename T> bool operator<(const T &X, const Optional<T> &Y) {
+                            ^~~~~~~~
+/usr/include/llvm/ADT/Optional.h:266:28: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   mismatched types ‘const llvm::Optional<T>’ and ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeKind’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/llvm/ADT/StringMap.h:17:0,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/llvm/ADT/StringRef.h:883:15: note: candidate: bool llvm::operator<(llvm::StringRef, llvm::StringRef)
+   inline bool operator<(StringRef LHS, StringRef RHS) {
+               ^~~~~~~~
+/usr/include/llvm/ADT/StringRef.h:883:15: note:   no known conversion for argument 1 from ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)0> {aka llvm::TerminatorInst::SuccIterator<llvm::TerminatorInst*, llvm::BasicBlock>}’ to ‘llvm::StringRef’
+In file included from /usr/include/llvm/IR/Metadata.h:23:0,
+                 from /usr/include/llvm/IR/TrackingMDRef.h:17,
+                 from /usr/include/llvm/IR/DebugLoc.h:18,
+                 from /usr/include/llvm/IR/Instruction.h:22,
+                 from /usr/include/llvm/IR/BasicBlock.h:23,
+                 from /usr/include/llvm/Analysis/RegionInfo.h:45,
+                 from bracket_list.hpp:5,
+                 from bracket_list.cpp:1:
+/usr/include/llvm/ADT/PointerUnion.h:203:6: note: candidate: template<class PT1, class PT2> bool llvm::operator<(llvm::PointerUnion<PT1, PT2>, llvm::PointerUnion<PT1, PT2>)
+ bool operator<(PointerUnion<PT1, PT2> lhs, PointerUnion<PT1, PT2> rhs) {
+      ^~~~~~~~
+/usr/include/llvm/ADT/PointerUnion.h:203:6: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::TerminatorInst::SuccIterator<llvm::TerminatorInst*, llvm::BasicBlock>’ is not derived from ‘llvm::PointerUnion<PT1, PT2>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/forward_list:38:0,
+                 from bracket_list.hpp:12,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/forward_list.h:1391:5: note: candidate: template<class _Tp, class _Alloc> bool std::operator<(const std::forward_list<_Tp, _Alloc>&, const std::forward_list<_Tp, _Alloc>&)
+     operator<(const forward_list<_Tp, _Alloc>& __lx,
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/forward_list.h:1391:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)0> {aka llvm::TerminatorInst::SuccIterator<llvm::TerminatorInst*, llvm::BasicBlock>}’ is not derived from ‘const std::forward_list<_Tp, _Alloc>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/list:63:0,
+                 from /usr/include/llvm/IR/PassManager.h:55,
+                 from /usr/include/llvm/IR/Dominators.h:24,
+                 from /usr/include/llvm/Analysis/RegionInfo.h:46,
+                 from bracket_list.hpp:5,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_list.h:1918:5: note: candidate: template<class _Tp, class _Alloc> bool std::operator<(const std::__cxx11::list<_Tp, _Alloc>&, const std::__cxx11::list<_Tp, _Alloc>&)
+     operator<(const list<_Tp, _Alloc>& __x, const list<_Tp, _Alloc>& __y)
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/stl_list.h:1918:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)0> {aka llvm::TerminatorInst::SuccIterator<llvm::TerminatorInst*, llvm::BasicBlock>}’ is not derived from ‘const std::__cxx11::list<_Tp, _Alloc>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/map:62:0,
+                 from /usr/include/llvm/IR/Attributes.h:29,
+                 from /usr/include/llvm/IR/Argument.h:19,
+                 from /usr/include/llvm/IR/Function.h:26,
+                 from /usr/include/llvm/IR/CFG.h:22,
+                 from /usr/include/llvm/IR/Dominators.h:23,
+                 from /usr/include/llvm/Analysis/RegionInfo.h:46,
+                 from bracket_list.hpp:5,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_multimap.h:1078:5: note: candidate: template<class _Key, class _Tp, class _Compare, class _Alloc> bool std::operator<(const std::multimap<_Key, _Tp, _Compare, _Alloc>&, const std::multimap<_Key, _Tp, _Compare, _Alloc>&)
+     operator<(const multimap<_Key, _Tp, _Compare, _Alloc>& __x,
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/stl_multimap.h:1078:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)0> {aka llvm::TerminatorInst::SuccIterator<llvm::TerminatorInst*, llvm::BasicBlock>}’ is not derived from ‘const std::multimap<_Key, _Tp, _Compare, _Alloc>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/map:61:0,
+                 from /usr/include/llvm/IR/Attributes.h:29,
+                 from /usr/include/llvm/IR/Argument.h:19,
+                 from /usr/include/llvm/IR/Function.h:26,
+                 from /usr/include/llvm/IR/CFG.h:22,
+                 from /usr/include/llvm/IR/Dominators.h:23,
+                 from /usr/include/llvm/Analysis/RegionInfo.h:46,
+                 from bracket_list.hpp:5,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_map.h:1412:5: note: candidate: template<class _Key, class _Tp, class _Compare, class _Alloc> bool std::operator<(const std::map<_Key, _Tp, _Compare, _Alloc>&, const std::map<_Key, _Tp, _Compare, _Alloc>&)
+     operator<(const map<_Key, _Tp, _Compare, _Alloc>& __x,
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/stl_map.h:1412:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)0> {aka llvm::TerminatorInst::SuccIterator<llvm::TerminatorInst*, llvm::BasicBlock>}’ is not derived from ‘const std::map<_Key, _Tp, _Compare, _Alloc>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/set:62:0,
+                 from /usr/include/llvm/ADT/DepthFirstIterator.h:42,
+                 from /usr/include/llvm/Analysis/RegionInfo.h:41,
+                 from bracket_list.hpp:5,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_multiset.h:913:5: note: candidate: template<class _Key, class _Compare, class _Alloc> bool std::operator<(const std::multiset<_Key, _Compare, _Alloc>&, const std::multiset<_Key, _Compare, _Alloc>&)
+     operator<(const multiset<_Key, _Compare, _Alloc>& __x,
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/stl_multiset.h:913:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)0> {aka llvm::TerminatorInst::SuccIterator<llvm::TerminatorInst*, llvm::BasicBlock>}’ is not derived from ‘const std::multiset<_Key, _Compare, _Alloc>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/set:61:0,
+                 from /usr/include/llvm/ADT/DepthFirstIterator.h:42,
+                 from /usr/include/llvm/Analysis/RegionInfo.h:41,
+                 from bracket_list.hpp:5,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_set.h:930:5: note: candidate: template<class _Key, class _Compare, class _Alloc> bool std::operator<(const std::set<_Key, _Compare, _Alloc>&, const std::set<_Key, _Compare, _Alloc>&)
+     operator<(const set<_Key, _Compare, _Alloc>& __x,
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/stl_set.h:930:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)0> {aka llvm::TerminatorInst::SuccIterator<llvm::TerminatorInst*, llvm::BasicBlock>}’ is not derived from ‘const std::set<_Key, _Compare, _Alloc>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/set:60:0,
+                 from /usr/include/llvm/ADT/DepthFirstIterator.h:42,
+                 from /usr/include/llvm/Analysis/RegionInfo.h:41,
+                 from bracket_list.hpp:5,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_tree.h:1543:5: note: candidate: template<class _Key, class _Val, class _KeyOfValue, class _Compare, class _Alloc> bool std::operator<(const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>&, const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>&)
+     operator<(const _Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>& __x,
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/stl_tree.h:1543:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)0> {aka llvm::TerminatorInst::SuccIterator<llvm::TerminatorInst*, llvm::BasicBlock>}’ is not derived from ‘const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/vector:64:0,
+                 from /usr/include/llvm/ADT/ArrayRef.h:26,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_vector.h:1613:5: note: candidate: template<class _Tp, class _Alloc> bool std::operator<(const std::vector<_Tp, _Alloc>&, const std::vector<_Tp, _Alloc>&)
+     operator<(const vector<_Tp, _Alloc>& __x, const vector<_Tp, _Alloc>& __y)
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/stl_vector.h:1613:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)0> {aka llvm::TerminatorInst::SuccIterator<llvm::TerminatorInst*, llvm::BasicBlock>}’ is not derived from ‘const std::vector<_Tp, _Alloc>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/memory:81:0,
+                 from /usr/include/llvm/ADT/STLExtras.h:27,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/shared_ptr.h:416:5: note: candidate: template<class _Tp> bool std::operator<(std::nullptr_t, const std::shared_ptr<_Tp>&)
+     operator<(nullptr_t, const shared_ptr<_Tp>& __a) noexcept
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/shared_ptr.h:416:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   mismatched types ‘const std::shared_ptr<_Tp>’ and ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeKind’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/memory:81:0,
+                 from /usr/include/llvm/ADT/STLExtras.h:27,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/shared_ptr.h:408:5: note: candidate: template<class _Tp> bool std::operator<(const std::shared_ptr<_Tp>&, std::nullptr_t)
+     operator<(const shared_ptr<_Tp>& __a, nullptr_t) noexcept
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/shared_ptr.h:408:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)0> {aka llvm::TerminatorInst::SuccIterator<llvm::TerminatorInst*, llvm::BasicBlock>}’ is not derived from ‘const std::shared_ptr<_Tp>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/memory:81:0,
+                 from /usr/include/llvm/ADT/STLExtras.h:27,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/shared_ptr.h:398:5: note: candidate: template<class _Tp, class _Up> bool std::operator<(const std::shared_ptr<_Tp>&, const std::shared_ptr<_Up>&)
+     operator<(const shared_ptr<_Tp>& __a, const shared_ptr<_Up>& __b) noexcept
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/shared_ptr.h:398:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)0> {aka llvm::TerminatorInst::SuccIterator<llvm::TerminatorInst*, llvm::BasicBlock>}’ is not derived from ‘const std::shared_ptr<_Tp>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/bits/shared_ptr.h:52:0,
+                 from /usr/include/c++/7.2.1/memory:81,
+                 from /usr/include/llvm/ADT/STLExtras.h:27,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/shared_ptr_base.h:1460:5: note: candidate: template<class _Tp, __gnu_cxx::_Lock_policy _Lp> bool std::operator<(std::nullptr_t, const std::__shared_ptr<_Tp, _Lp>&)
+     operator<(nullptr_t, const __shared_ptr<_Tp, _Lp>& __a) noexcept
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/shared_ptr_base.h:1460:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   mismatched types ‘const std::__shared_ptr<_Tp, _Lp>’ and ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeKind’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/bits/shared_ptr.h:52:0,
+                 from /usr/include/c++/7.2.1/memory:81,
+                 from /usr/include/llvm/ADT/STLExtras.h:27,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/shared_ptr_base.h:1452:5: note: candidate: template<class _Tp, __gnu_cxx::_Lock_policy _Lp> bool std::operator<(const std::__shared_ptr<_Tp, _Lp>&, std::nullptr_t)
+     operator<(const __shared_ptr<_Tp, _Lp>& __a, nullptr_t) noexcept
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/shared_ptr_base.h:1452:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)0> {aka llvm::TerminatorInst::SuccIterator<llvm::TerminatorInst*, llvm::BasicBlock>}’ is not derived from ‘const std::__shared_ptr<_Tp, _Lp>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/bits/shared_ptr.h:52:0,
+                 from /usr/include/c++/7.2.1/memory:81,
+                 from /usr/include/llvm/ADT/STLExtras.h:27,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/shared_ptr_base.h:1441:5: note: candidate: template<class _Tp, class _Up, __gnu_cxx::_Lock_policy _Lp> bool std::operator<(const std::__shared_ptr<_Tp1, _Lp>&, const std::__shared_ptr<_Tp2, _Lp>&)
+     operator<(const __shared_ptr<_Tp, _Lp>& __a,
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/shared_ptr_base.h:1441:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)0> {aka llvm::TerminatorInst::SuccIterator<llvm::TerminatorInst*, llvm::BasicBlock>}’ is not derived from ‘const std::__shared_ptr<_Tp1, _Lp>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/memory:80:0,
+                 from /usr/include/llvm/ADT/STLExtras.h:27,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/unique_ptr.h:734:5: note: candidate: template<class _Tp, class _Dp> bool std::operator<(std::nullptr_t, const std::unique_ptr<_Tp, _Dp>&)
+     operator<(nullptr_t, const unique_ptr<_Tp, _Dp>& __x)
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/unique_ptr.h:734:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   mismatched types ‘const std::unique_ptr<_Tp, _Dp>’ and ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeKind’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/memory:80:0,
+                 from /usr/include/llvm/ADT/STLExtras.h:27,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/unique_ptr.h:728:5: note: candidate: template<class _Tp, class _Dp> bool std::operator<(const std::unique_ptr<_Tp, _Dp>&, std::nullptr_t)
+     operator<(const unique_ptr<_Tp, _Dp>& __x, nullptr_t)
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/unique_ptr.h:728:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)0> {aka llvm::TerminatorInst::SuccIterator<llvm::TerminatorInst*, llvm::BasicBlock>}’ is not derived from ‘const std::unique_ptr<_Tp, _Dp>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/memory:80:0,
+                 from /usr/include/llvm/ADT/STLExtras.h:27,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/unique_ptr.h:717:5: note: candidate: template<class _Tp, class _Dp, class _Up, class _Ep> bool std::operator<(const std::unique_ptr<_Tp, _Dp>&, const std::unique_ptr<_Up, _Ep>&)
+     operator<(const unique_ptr<_Tp, _Dp>& __x,
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/unique_ptr.h:717:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)0> {aka llvm::TerminatorInst::SuccIterator<llvm::TerminatorInst*, llvm::BasicBlock>}’ is not derived from ‘const std::unique_ptr<_Tp, _Dp>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/bits/ios_base.h:46:0,
+                 from /usr/include/c++/7.2.1/ios:42,
+                 from /usr/include/c++/7.2.1/ostream:38,
+                 from /usr/include/c++/7.2.1/iterator:64,
+                 from /usr/include/llvm/ADT/STLExtras.h:25,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/system_error:282:3: note: candidate: bool std::operator<(const std::error_condition&, const std::error_condition&)
+   operator<(const error_condition& __lhs,
+   ^~~~~~~~
+/usr/include/c++/7.2.1/system_error:282:3: note:   no known conversion for argument 1 from ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)0> {aka llvm::TerminatorInst::SuccIterator<llvm::TerminatorInst*, llvm::BasicBlock>}’ to ‘const std::error_condition&’
+/usr/include/c++/7.2.1/system_error:208:3: note: candidate: bool std::operator<(const std::error_code&, const std::error_code&)
+   operator<(const error_code& __lhs, const error_code& __rhs) noexcept
+   ^~~~~~~~
+/usr/include/c++/7.2.1/system_error:208:3: note:   no known conversion for argument 1 from ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)0> {aka llvm::TerminatorInst::SuccIterator<llvm::TerminatorInst*, llvm::BasicBlock>}’ to ‘const std::error_code&’
+In file included from /usr/include/c++/7.2.1/functional:54:0,
+                 from /usr/include/llvm/ADT/STLExtras.h:24,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/tuple:1410:5: note: candidate: template<class ... _TElements, class ... _UElements> constexpr bool std::operator<(const std::tuple<_Tps ...>&, const std::tuple<_Elements ...>&)
+     operator<(const tuple<_TElements...>& __t,
+     ^~~~~~~~
+/usr/include/c++/7.2.1/tuple:1410:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)0> {aka llvm::TerminatorInst::SuccIterator<llvm::TerminatorInst*, llvm::BasicBlock>}’ is not derived from ‘const std::tuple<_Tps ...>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/tuple:39:0,
+                 from /usr/include/c++/7.2.1/functional:54,
+                 from /usr/include/llvm/ADT/STLExtras.h:24,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/array:262:5: note: candidate: template<class _Tp, long unsigned int _Nm> bool std::operator<(const std::array<_Tp, _Nm>&, const std::array<_Tp, _Nm>&)
+     operator<(const array<_Tp, _Nm>& __a, const array<_Tp, _Nm>& __b)
+     ^~~~~~~~
+/usr/include/c++/7.2.1/array:262:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)0> {aka llvm::TerminatorInst::SuccIterator<llvm::TerminatorInst*, llvm::BasicBlock>}’ is not derived from ‘const std::array<_Tp, _Nm>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/string:52:0,
+                 from /usr/include/c++/7.2.1/stdexcept:39,
+                 from /usr/include/c++/7.2.1/array:39,
+                 from /usr/include/c++/7.2.1/tuple:39,
+                 from /usr/include/c++/7.2.1/functional:54,
+                 from /usr/include/llvm/ADT/STLExtras.h:24,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/basic_string.h:6107:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> bool std::operator<(const _CharT*, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator<(const _CharT* __lhs,
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/basic_string.h:6107:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   mismatched types ‘const _CharT*’ and ‘llvm::TerminatorInst::SuccIterator<llvm::TerminatorInst*, llvm::BasicBlock>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/string:52:0,
+                 from /usr/include/c++/7.2.1/stdexcept:39,
+                 from /usr/include/c++/7.2.1/array:39,
+                 from /usr/include/c++/7.2.1/tuple:39,
+                 from /usr/include/c++/7.2.1/functional:54,
+                 from /usr/include/llvm/ADT/STLExtras.h:24,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/basic_string.h:6095:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> bool std::operator<(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*)
+     operator<(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/basic_string.h:6095:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)0> {aka llvm::TerminatorInst::SuccIterator<llvm::TerminatorInst*, llvm::BasicBlock>}’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/string:52:0,
+                 from /usr/include/c++/7.2.1/stdexcept:39,
+                 from /usr/include/c++/7.2.1/array:39,
+                 from /usr/include/c++/7.2.1/tuple:39,
+                 from /usr/include/c++/7.2.1/functional:54,
+                 from /usr/include/llvm/ADT/STLExtras.h:24,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/basic_string.h:6082:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> bool std::operator<(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator<(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/basic_string.h:6082:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)0> {aka llvm::TerminatorInst::SuccIterator<llvm::TerminatorInst*, llvm::BasicBlock>}’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7.2.1/algorithm:61,
+                 from /usr/include/llvm/ADT/STLExtras.h:20,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_iterator.h:1148:5: note: candidate: template<class _Iterator> bool std::operator<(const std::move_iterator<_IteratorL>&, const std::move_iterator<_IteratorL>&)
+     operator<(const move_iterator<_Iterator>& __x,
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/stl_iterator.h:1148:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)0> {aka llvm::TerminatorInst::SuccIterator<llvm::TerminatorInst*, llvm::BasicBlock>}’ is not derived from ‘const std::move_iterator<_IteratorL>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7.2.1/algorithm:61,
+                 from /usr/include/llvm/ADT/STLExtras.h:20,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_iterator.h:1142:5: note: candidate: template<class _IteratorL, class _IteratorR> bool std::operator<(const std::move_iterator<_IteratorL>&, const std::move_iterator<_IteratorR>&)
+     operator<(const move_iterator<_IteratorL>& __x,
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/stl_iterator.h:1142:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)0> {aka llvm::TerminatorInst::SuccIterator<llvm::TerminatorInst*, llvm::BasicBlock>}’ is not derived from ‘const std::move_iterator<_IteratorL>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7.2.1/algorithm:61,
+                 from /usr/include/llvm/ADT/STLExtras.h:20,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_iterator.h:343:5: note: candidate: template<class _IteratorL, class _IteratorR> bool std::operator<(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)
+     operator<(const reverse_iterator<_IteratorL>& __x,
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/stl_iterator.h:343:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)0> {aka llvm::TerminatorInst::SuccIterator<llvm::TerminatorInst*, llvm::BasicBlock>}’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7.2.1/algorithm:61,
+                 from /usr/include/llvm/ADT/STLExtras.h:20,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_iterator.h:305:5: note: candidate: template<class _Iterator> bool std::operator<(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_Iterator>&)
+     operator<(const reverse_iterator<_Iterator>& __x,
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/stl_iterator.h:305:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)0> {aka llvm::TerminatorInst::SuccIterator<llvm::TerminatorInst*, llvm::BasicBlock>}’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+In file included from /usr/include/c++/7.2.1/utility:70:0,
+                 from /usr/include/c++/7.2.1/algorithm:60,
+                 from /usr/include/llvm/ADT/STLExtras.h:20,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_pair.h:449:5: note: candidate: template<class _T1, class _T2> constexpr bool std::operator<(const std::pair<_T1, _T2>&, const std::pair<_T1, _T2>&)
+     operator<(const pair<_T1, _T2>& __x, const pair<_T1, _T2>& __y)
+     ^~~~~~~~
+/usr/include/c++/7.2.1/bits/stl_pair.h:449:5: note:   template argument deduction/substitution failed:
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:349:55: note:   ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)0> {aka llvm::TerminatorInst::SuccIterator<llvm::TerminatorInst*, llvm::BasicBlock>}’ is not derived from ‘const std::pair<_T1, _T2>’
+     for (ItorT<NK> child = current<NK>(tos), end = end<NK>(tos); child != end; ++child) {
+                                                    ~~~^~~
+bracket_list.hpp:350:27: error: no matching function for call to ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::getEdge(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::ItorT<(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function>, llvm::MallocAllocator>::NodeKind)0>&)’
+       if (tryVisit(getEdge(child), true)) {
+                    ~~~~~~~^~~~~~~
+bracket_list.hpp:329:9: note: candidate: template<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeKind NK> llvm::NodeLoopEquivalence<RT, AllocatorT>::EdgeT llvm::NodeLoopEquivalence<RT, AllocatorT>::getEdge(llvm::NodeLoopEquivalence<RT, AllocatorT>::ItorT<NK>) [with llvm::NodeLoopEquivalence<RT, AllocatorT>::NodeKind NK = NK; RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator]
+   EdgeT getEdge(ItorT<NK> itor) { return {&*itor, false}; }
+         ^~~~~~~
+bracket_list.hpp:329:9: note:   template argument deduction/substitution failed:
+bracket_list.hpp:350:27: note:   couldn't deduce template parameter ‘NK’
+       if (tryVisit(getEdge(child), true)) {
+                    ~~~~~~~^~~~~~~
+bracket_list.hpp:355:28: error: use of deleted function ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSNodeT& llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSNodeT::operator=(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSNodeT&&)’
+     DFSQueue[DFS_Number++] = {tos.getEdge(), Allocator};
+     ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bracket_list.hpp: In instantiation of ‘llvm::NodeLoopEquivalence<RT, AllocatorT>::punchMarkerHandleAdjacents(llvm::NodeLoopEquivalence<RT, AllocatorT>::DFSNodeT&, llvm::NodeLoopEquivalence<RT, AllocatorT>::TimeStepT, llvm::NodeLoopEquivalence<RT, AllocatorT>::TimeStepT&, llvm::NodeLoopEquivalence<RT, AllocatorT>::TimeStepT&)::<lambda(llvm::NodeLoopEquivalence<RT, AllocatorT>::TimeStepT, bool)> [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator; llvm::NodeLoopEquivalence<RT, AllocatorT>::TimeStepT = long unsigned int]’:
+bracket_list.hpp:389:54:   required from ‘struct llvm::NodeLoopEquivalence<RT, AllocatorT>::punchMarkerHandleAdjacents(llvm::NodeLoopEquivalence<RT, AllocatorT>::DFSNodeT&, llvm::NodeLoopEquivalence<RT, AllocatorT>::TimeStepT, llvm::NodeLoopEquivalence<RT, AllocatorT>::TimeStepT&, llvm::NodeLoopEquivalence<RT, AllocatorT>::TimeStepT&) [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator; llvm::NodeLoopEquivalence<RT, AllocatorT>::TimeStepT = long unsigned int]::<lambda(using TimeStepT = size_t, bool)>’
+bracket_list.hpp:387:10:   required from ‘void llvm::NodeLoopEquivalence<RT, AllocatorT>::punchMarkerHandleAdjacents(llvm::NodeLoopEquivalence<RT, AllocatorT>::DFSNodeT&, llvm::NodeLoopEquivalence<RT, AllocatorT>::TimeStepT, llvm::NodeLoopEquivalence<RT, AllocatorT>::TimeStepT&, llvm::NodeLoopEquivalence<RT, AllocatorT>::TimeStepT&) [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator; llvm::NodeLoopEquivalence<RT, AllocatorT>::TimeStepT = long unsigned int]’
+bracket_list.hpp:433:33:   required from ‘void llvm::NodeLoopEquivalence<RT, AllocatorT>::punchMarkers() [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator]’
+bracket_list.hpp:450:17:   required from ‘llvm::NodeLoopEquivalence<RT, AllocatorT>::NodeLoopEquivalence(const FuncT&) [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator; llvm::NodeLoopEquivalence<RT, AllocatorT>::FuncT = llvm::Function]’
+bracket_list.hpp:487:57:   required from here
+bracket_list.hpp:389:19: error: ‘mergeChild’ was not declared in this scope
+         mergeChild(DFSQueue[AdjNumber - 1], HighPt2, HighPt_tmp);
+         ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bracket_list.hpp:392:19: error: ‘addBracket’ was not declared in this scope
+         addBracket(DFSQueue[AdjNumber - 1], IsSplitEdge);
+         ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bracket_list.hpp: In instantiation of ‘void llvm::NodeLoopEquivalence<RT, AllocatorT>::punchMarkerHandleAdjacents(llvm::NodeLoopEquivalence<RT, AllocatorT>::DFSNodeT&, llvm::NodeLoopEquivalence<RT, AllocatorT>::TimeStepT, llvm::NodeLoopEquivalence<RT, AllocatorT>::TimeStepT&, llvm::NodeLoopEquivalence<RT, AllocatorT>::TimeStepT&) [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator; llvm::NodeLoopEquivalence<RT, AllocatorT>::TimeStepT = long unsigned int]’:
+bracket_list.hpp:433:33:   required from ‘void llvm::NodeLoopEquivalence<RT, AllocatorT>::punchMarkers() [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator]’
+bracket_list.hpp:450:17:   required from ‘llvm::NodeLoopEquivalence<RT, AllocatorT>::NodeLoopEquivalence(const FuncT&) [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator; llvm::NodeLoopEquivalence<RT, AllocatorT>::FuncT = llvm::Function]’
+bracket_list.hpp:487:57:   required from here
+bracket_list.hpp:396:18: error: ‘visitAdjacent’ was not declared in this scope
+     visitAdjacent(DFSNumbers[child_node.getPal()], true);
+     ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bracket_list.hpp:396:18: note: suggested alternative: ‘VisitAdjacent’
+     visitAdjacent(DFSNumbers[child_node.getPal()], true);
+     ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     VisitAdjacent
+bracket_list.hpp:399:22: error: ‘visitAdjacent’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
+         visitAdjacent(DFSNumbers[{Pred, NK_Exit}], false);
+         ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bracket_list.hpp:396:18: note: ‘visitAdjacent’ declared here, later in the translation unit
+     visitAdjacent(DFSNumbers[child_node.getPal()], true);
+     ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bracket_list.hpp:403:22: error: ‘visitAdjacent’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
+         visitAdjacent(DFSNumbers[{Succ, NK_Entry}], false);
+         ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bracket_list.hpp:396:18: note: ‘visitAdjacent’ declared here, later in the translation unit
+     visitAdjacent(DFSNumbers[child_node.getPal()], true);
+     ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bracket_list.hpp: In instantiation of ‘void llvm::NodeLoopEquivalence<RT, AllocatorT>::punchMarkerFinishVisit(llvm::NodeLoopEquivalence<RT, AllocatorT>::DFSNodeT&, llvm::NodeLoopEquivalence<RT, AllocatorT>::TimeStepT, llvm::NodeLoopEquivalence<RT, AllocatorT>::TimeStepT, llvm::NodeLoopEquivalence<RT, AllocatorT>::TimeStepT) [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator; llvm::NodeLoopEquivalence<RT, AllocatorT>::TimeStepT = long unsigned int]’:
+bracket_list.hpp:434:29:   required from ‘void llvm::NodeLoopEquivalence<RT, AllocatorT>::punchMarkers() [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator]’
+bracket_list.hpp:450:17:   required from ‘llvm::NodeLoopEquivalence<RT, AllocatorT>::NodeLoopEquivalence(const FuncT&) [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator; llvm::NodeLoopEquivalence<RT, AllocatorT>::FuncT = llvm::Function]’
+bracket_list.hpp:487:57:   required from here
+bracket_list.hpp:409:27: error: ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::TimeStepT llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSNodeT::HighPt’ is private within this context
+     if (HighPt_tmp > Node.HighPt) {
+                      ~~~~~^~~~~~
+bracket_list.hpp:239:15: note: declared private here
+     TimeStepT HighPt;
+               ^~~~~~
+bracket_list.hpp:410:12: error: ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::TimeStepT llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSNodeT::HighPt’ is private within this context
+       Node.HighPt = HighPt_tmp;
+       ~~~~~^~~~~~
+bracket_list.hpp:239:15: note: declared private here
+     TimeStepT HighPt;
+               ^~~~~~
+bracket_list.hpp:418:27: error: ‘class llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSNodeT’ has no member named ‘getBrackets’; did you mean ‘Brackets’?
+     MarkerT marker = Node.getBrackets().getMarker();
+                      ~~~~~^~~~~~~~~~~
+                      Brackets
+bracket_list.hpp:419:39: error: ‘class llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT’ has no member named ‘getPointer’
+     BMM[Node.getEdge().getChildNode().getPointer()] = marker;
+bracket_list.hpp:421:25: error: ‘class llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSNodeT’ has no member named ‘getBrackets’; did you mean ‘Brackets’?
+       EdgeT edge = Node.getBrackets().front();
+                    ~~~~~^~~~~~~~~~~
+                    Brackets
+bracket_list.hpp:423:33: error: ‘class llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT’ has no member named ‘getPointer’
+         BMM[edge.getChildNode().getPointer()] = marker;
+In file included from bracket_list.hpp:4:0,
+                 from bracket_list.cpp:1:
+/usr/include/llvm/ADT/PointerIntPair.h: In instantiation of ‘struct llvm::PointerIntPairInfo<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, 1, llvm::PointerLikeTypeTraits<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT> >’:
+/usr/include/llvm/ADT/PointerIntPair.h:56:57:   required from ‘PointerTy llvm::PointerIntPair<PointerTy, IntBits, IntType, PtrTraits, Info>::getPointer() const [with PointerTy = llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT; unsigned int IntBits = 1; IntType = llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::EdgeKind; PtrTraits = llvm::PointerLikeTypeTraits<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT>; Info = llvm::PointerIntPairInfo<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, 1, llvm::PointerLikeTypeTraits<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT> >]’
+bracket_list.hpp:204:52:   required from ‘llvm::NodeLoopEquivalence<RT, AllocatorT>::NodeT llvm::NodeLoopEquivalence<RT, AllocatorT>::EdgeT::getChildNode() [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator]’
+bracket_list.hpp:376:62:   required from ‘void llvm::NodeLoopEquivalence<RT, AllocatorT>::dfsVisit() [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator]’
+bracket_list.hpp:449:13:   required from ‘llvm::NodeLoopEquivalence<RT, AllocatorT>::NodeLoopEquivalence(const FuncT&) [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator; llvm::NodeLoopEquivalence<RT, AllocatorT>::FuncT = llvm::Function]’
+bracket_list.hpp:487:57:   required from here
+/usr/include/llvm/ADT/PointerIntPair.h:126:48: error: ‘NumLowBitsAvailable’ is not a member of ‘llvm::PointerLikeTypeTraits<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT>’
+   static_assert(PtrTraits::NumLowBitsAvailable <
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+                     std::numeric_limits<uintptr_t>::digits,
+                     ~~~                         
+/usr/include/llvm/ADT/PointerIntPair.h:129:25: error: ‘NumLowBitsAvailable’ is not a member of ‘llvm::PointerLikeTypeTraits<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT>’
+   static_assert(IntBits <= PtrTraits::NumLowBitsAvailable,
+                 ~~~~~~~~^~~~~~~~~~~~
+/usr/include/llvm/ADT/PointerIntPair.h:134:35: error: ‘NumLowBitsAvailable’ is not a member of ‘llvm::PointerLikeTypeTraits<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT>’
+         ~(uintptr_t)(((intptr_t)1 << PtrTraits::NumLowBitsAvailable) - 1),
+                      ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/llvm/ADT/PointerIntPair.h:138:16: error: ‘NumLowBitsAvailable’ is not a member of ‘llvm::PointerLikeTypeTraits<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT>’
+     IntShift = (uintptr_t)PtrTraits::NumLowBitsAvailable - IntBits,
+                ^~~~~~~~~~~~~~~~~~~~
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp: In instantiation of ‘void llvm::internal::BracketListT<NLET, AllocatorT>::drop(Container&) [with Container = std::forward_list<llvm::internal::BracketT<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> > >*, std::allocator<llvm::internal::BracketT<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> > >*> >; NLET = llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >; AllocatorT = llvm::MallocAllocator]’:
+bracket_list.hpp:266:7:   required from ‘void llvm::NodeLoopEquivalence<RT, AllocatorT>::DFSNodeT::deleteBrackets() [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator]’
+bracket_list.hpp:431:7:   required from ‘void llvm::NodeLoopEquivalence<RT, AllocatorT>::punchMarkers() [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator]’
+bracket_list.hpp:450:17:   required from ‘llvm::NodeLoopEquivalence<RT, AllocatorT>::NodeLoopEquivalence(const FuncT&) [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator; llvm::NodeLoopEquivalence<RT, AllocatorT>::FuncT = llvm::Function]’
+bracket_list.hpp:487:57:   required from here
+bracket_list.hpp:149:14: error: object type ‘llvm::internal::BracketT<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> > >’ does not match destructor name ~‘BracketListNodeT’
+         dh->~BracketListNodeT();
+         ~~~~~^~~~~~~~~~~~~~~~
+bracket_list.hpp:150:19: error: ‘class llvm::MallocAllocator’ has no member named ‘deallocate’; did you mean ‘Deallocate’?
+         Allocator.deallocate(dh, sizeof(BracketT));
+         ~~~~~~~~~~^~~~~~~~~~
+         Deallocate
+In file included from bracket_list.hpp:1:0,
+                 from bracket_list.cpp:1:
+/usr/include/llvm/ADT/DenseMap.h: In instantiation of ‘BucketT* llvm::DenseMapBase<DerivedT, KeyT, ValueT, KeyInfoT, BucketT>::InsertIntoBucket(BucketT*, KeyArg&&, ValueArgs&& ...) [with KeyArg = const llvm::BasicBlock* const&; ValueArgs = {}; DerivedT = llvm::DenseMap<const llvm::BasicBlock*, std::pair<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, long unsigned int>, llvm::DenseMapInfo<const llvm::BasicBlock*>, llvm::detail::DenseMapPair<const llvm::BasicBlock*, std::pair<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, long unsigned int> > >; KeyT = const llvm::BasicBlock*; ValueT = std::pair<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, long unsigned int>; KeyInfoT = llvm::DenseMapInfo<const llvm::BasicBlock*>; BucketT = llvm::detail::DenseMapPair<const llvm::BasicBlock*, std::pair<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, long unsigned int> >]’:
+/usr/include/llvm/ADT/DenseMap.h:271:29:   required from ‘llvm::DenseMapBase<DerivedT, KeyT, ValueT, KeyInfoT, BucketT>::value_type& llvm::DenseMapBase<DerivedT, KeyT, ValueT, KeyInfoT, BucketT>::FindAndConstruct(const KeyT&) [with DerivedT = llvm::DenseMap<const llvm::BasicBlock*, std::pair<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, long unsigned int>, llvm::DenseMapInfo<const llvm::BasicBlock*>, llvm::detail::DenseMapPair<const llvm::BasicBlock*, std::pair<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, long unsigned int> > >; KeyT = const llvm::BasicBlock*; ValueT = std::pair<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, long unsigned int>; KeyInfoT = llvm::DenseMapInfo<const llvm::BasicBlock*>; BucketT = llvm::detail::DenseMapPair<const llvm::BasicBlock*, std::pair<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, long unsigned int> >; llvm::DenseMapBase<DerivedT, KeyT, ValueT, KeyInfoT, BucketT>::value_type = llvm::detail::DenseMapPair<const llvm::BasicBlock*, std::pair<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, long unsigned int> >]’
+/usr/include/llvm/ADT/DenseMap.h:275:28:   required from ‘ValueT& llvm::DenseMapBase<DerivedT, KeyT, ValueT, KeyInfoT, BucketT>::operator[](const KeyT&) [with DerivedT = llvm::DenseMap<const llvm::BasicBlock*, std::pair<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, long unsigned int>, llvm::DenseMapInfo<const llvm::BasicBlock*>, llvm::detail::DenseMapPair<const llvm::BasicBlock*, std::pair<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, long unsigned int> > >; KeyT = const llvm::BasicBlock*; ValueT = std::pair<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, long unsigned int>; KeyInfoT = llvm::DenseMapInfo<const llvm::BasicBlock*>; BucketT = llvm::detail::DenseMapPair<const llvm::BasicBlock*, std::pair<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, long unsigned int> >]’
+bracket_list.hpp:454:27:   required from ‘bool llvm::NodeLoopEquivalence<RT, AllocatorT>::isNodeLoopEquivalent(const BlockT*, const BlockT*) [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator; llvm::NodeLoopEquivalence<RT, AllocatorT>::BlockT = llvm::BasicBlock]’
+bracket_list.hpp:492:46:   required from here
+/usr/include/llvm/ADT/DenseMap.h:474:5: error: no matching function for call to ‘std::pair<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, long unsigned int>::pair()’
+     ::new (&TheBucket->getSecond()) ValueT(std::forward<ValueArgs>(Values)...);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/7.2.1/utility:70:0,
+                 from /usr/include/c++/7.2.1/algorithm:60,
+                 from /usr/include/llvm/ADT/STLExtras.h:20,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_pair.h:431:9: note: candidate: template<class ... _Args1, long unsigned int ..._Indexes1, class ... _Args2, long unsigned int ..._Indexes2> std::pair<_T1, _T2>::pair(std::tuple<_Args1 ...>&, std::tuple<_Args2 ...>&, std::_Index_tuple<_Indexes1 ...>, std::_Index_tuple<_Indexes2 ...>)
+         pair(tuple<_Args1...>&, tuple<_Args2...>&,
+         ^~~~
+/usr/include/c++/7.2.1/bits/stl_pair.h:431:9: note:   template argument deduction/substitution failed:
+In file included from bracket_list.hpp:1:0,
+                 from bracket_list.cpp:1:
+/usr/include/llvm/ADT/DenseMap.h:474:5: note:   candidate expects 4 arguments, 0 provided
+     ::new (&TheBucket->getSecond()) ValueT(std::forward<ValueArgs>(Values)...);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/7.2.1/utility:70:0,
+                 from /usr/include/c++/7.2.1/algorithm:60,
+                 from /usr/include/llvm/ADT/STLExtras.h:20,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_pair.h:364:9: note: candidate: template<class ... _Args1, class ... _Args2> std::pair<_T1, _T2>::pair(std::piecewise_construct_t, std::tuple<_Args1 ...>, std::tuple<_Args2 ...>)
+         pair(piecewise_construct_t, tuple<_Args1...>, tuple<_Args2...>);
+         ^~~~
+/usr/include/c++/7.2.1/bits/stl_pair.h:364:9: note:   template argument deduction/substitution failed:
+In file included from bracket_list.hpp:1:0,
+                 from bracket_list.cpp:1:
+/usr/include/llvm/ADT/DenseMap.h:474:5: note:   candidate expects 3 arguments, 0 provided
+     ::new (&TheBucket->getSecond()) ValueT(std::forward<ValueArgs>(Values)...);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/7.2.1/utility:70:0,
+                 from /usr/include/c++/7.2.1/algorithm:60,
+                 from /usr/include/llvm/ADT/STLExtras.h:20,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_pair.h:359:21: note: candidate: template<class _U1, class _U2, typename std::enable_if<(std::_PCC<((! std::is_same<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, _U1>::value) || (! std::is_same<long unsigned int, _U2>::value)), llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, long unsigned int>::_MoveConstructiblePair<_U1, _U2>() && (! std::_PCC<((! std::is_same<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, _U1>::value) || (! std::is_same<long unsigned int, _U2>::value)), llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, long unsigned int>::_ImplicitlyMoveConvertiblePair<_U1, _U2>())), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(std::pair<_U1, _U2>&&)
+  explicit constexpr pair(pair<_U1, _U2>&& __p)
+                     ^~~~
+/usr/include/c++/7.2.1/bits/stl_pair.h:359:21: note:   template argument deduction/substitution failed:
+In file included from bracket_list.hpp:1:0,
+                 from bracket_list.cpp:1:
+/usr/include/llvm/ADT/DenseMap.h:474:5: note:   candidate expects 1 argument, 0 provided
+     ::new (&TheBucket->getSecond()) ValueT(std::forward<ValueArgs>(Values)...);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/7.2.1/utility:70:0,
+                 from /usr/include/c++/7.2.1/algorithm:60,
+                 from /usr/include/llvm/ADT/STLExtras.h:20,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_pair.h:349:12: note: candidate: template<class _U1, class _U2, typename std::enable_if<(std::_PCC<((! std::is_same<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, _U1>::value) || (! std::is_same<long unsigned int, _U2>::value)), llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, long unsigned int>::_MoveConstructiblePair<_U1, _U2>() && std::_PCC<((! std::is_same<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, _U1>::value) || (! std::is_same<long unsigned int, _U2>::value)), llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, long unsigned int>::_ImplicitlyMoveConvertiblePair<_U1, _U2>()), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(std::pair<_U1, _U2>&&)
+  constexpr pair(pair<_U1, _U2>&& __p)
+            ^~~~
+/usr/include/c++/7.2.1/bits/stl_pair.h:349:12: note:   template argument deduction/substitution failed:
+In file included from bracket_list.hpp:1:0,
+                 from bracket_list.cpp:1:
+/usr/include/llvm/ADT/DenseMap.h:474:5: note:   candidate expects 1 argument, 0 provided
+     ::new (&TheBucket->getSecond()) ValueT(std::forward<ValueArgs>(Values)...);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/7.2.1/utility:70:0,
+                 from /usr/include/c++/7.2.1/algorithm:60,
+                 from /usr/include/llvm/ADT/STLExtras.h:20,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_pair.h:339:21: note: candidate: template<class _U1, class _U2, typename std::enable_if<(_MoveConstructiblePair<_U1, _U2>() && (! _ImplicitlyMoveConvertiblePair<_U1, _U2>())), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(_U1&&, _U2&&)
+  explicit constexpr pair(_U1&& __x, _U2&& __y)
+                     ^~~~
+/usr/include/c++/7.2.1/bits/stl_pair.h:339:21: note:   template argument deduction/substitution failed:
+In file included from bracket_list.hpp:1:0,
+                 from bracket_list.cpp:1:
+/usr/include/llvm/ADT/DenseMap.h:474:5: note:   candidate expects 2 arguments, 0 provided
+     ::new (&TheBucket->getSecond()) ValueT(std::forward<ValueArgs>(Values)...);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/7.2.1/utility:70:0,
+                 from /usr/include/c++/7.2.1/algorithm:60,
+                 from /usr/include/llvm/ADT/STLExtras.h:20,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_pair.h:330:12: note: candidate: template<class _U1, class _U2, typename std::enable_if<(_MoveConstructiblePair<_U1, _U2>() && _ImplicitlyMoveConvertiblePair<_U1, _U2>()), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(_U1&&, _U2&&)
+  constexpr pair(_U1&& __x, _U2&& __y)
+            ^~~~
+/usr/include/c++/7.2.1/bits/stl_pair.h:330:12: note:   template argument deduction/substitution failed:
+In file included from bracket_list.hpp:1:0,
+                 from bracket_list.cpp:1:
+/usr/include/llvm/ADT/DenseMap.h:474:5: note:   candidate expects 2 arguments, 0 provided
+     ::new (&TheBucket->getSecond()) ValueT(std::forward<ValueArgs>(Values)...);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/7.2.1/utility:70:0,
+                 from /usr/include/c++/7.2.1/algorithm:60,
+                 from /usr/include/llvm/ADT/STLExtras.h:20,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_pair.h:321:17: note: candidate: template<class _U2, typename std::enable_if<_CopyMovePair<false, llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, _U2>(), bool>::type <anonymous> > std::pair<_T1, _T2>::pair(const _T1&, _U2&&)
+        explicit pair(const _T1& __x, _U2&& __y)
+                 ^~~~
+/usr/include/c++/7.2.1/bits/stl_pair.h:321:17: note:   template argument deduction/substitution failed:
+In file included from bracket_list.hpp:1:0,
+                 from bracket_list.cpp:1:
+/usr/include/llvm/ADT/DenseMap.h:474:5: note:   candidate expects 2 arguments, 0 provided
+     ::new (&TheBucket->getSecond()) ValueT(std::forward<ValueArgs>(Values)...);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/7.2.1/utility:70:0,
+                 from /usr/include/c++/7.2.1/algorithm:60,
+                 from /usr/include/llvm/ADT/STLExtras.h:20,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_pair.h:314:18: note: candidate: template<class _U2, typename std::enable_if<_CopyMovePair<true, llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, _U2>(), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(const _T1&, _U2&&)
+        constexpr pair(const _T1& __x, _U2&& __y)
+                  ^~~~
+/usr/include/c++/7.2.1/bits/stl_pair.h:314:18: note:   template argument deduction/substitution failed:
+In file included from bracket_list.hpp:1:0,
+                 from bracket_list.cpp:1:
+/usr/include/llvm/ADT/DenseMap.h:474:5: note:   candidate expects 2 arguments, 0 provided
+     ::new (&TheBucket->getSecond()) ValueT(std::forward<ValueArgs>(Values)...);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/7.2.1/utility:70:0,
+                 from /usr/include/c++/7.2.1/algorithm:60,
+                 from /usr/include/llvm/ADT/STLExtras.h:20,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_pair.h:307:27: note: candidate: template<class _U1, typename std::enable_if<_MoveCopyPair<false, _U1, long unsigned int>(), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(_U1&&, const _T2&)
+        explicit constexpr pair(_U1&& __x, const _T2& __y)
+                           ^~~~
+/usr/include/c++/7.2.1/bits/stl_pair.h:307:27: note:   template argument deduction/substitution failed:
+In file included from bracket_list.hpp:1:0,
+                 from bracket_list.cpp:1:
+/usr/include/llvm/ADT/DenseMap.h:474:5: note:   candidate expects 2 arguments, 0 provided
+     ::new (&TheBucket->getSecond()) ValueT(std::forward<ValueArgs>(Values)...);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/7.2.1/utility:70:0,
+                 from /usr/include/c++/7.2.1/algorithm:60,
+                 from /usr/include/llvm/ADT/STLExtras.h:20,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_pair.h:300:18: note: candidate: template<class _U1, typename std::enable_if<_MoveCopyPair<true, _U1, long unsigned int>(), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(_U1&&, const _T2&)
+        constexpr pair(_U1&& __x, const _T2& __y)
+                  ^~~~
+/usr/include/c++/7.2.1/bits/stl_pair.h:300:18: note:   template argument deduction/substitution failed:
+In file included from bracket_list.hpp:1:0,
+                 from bracket_list.cpp:1:
+/usr/include/llvm/ADT/DenseMap.h:474:5: note:   candidate expects 2 arguments, 0 provided
+     ::new (&TheBucket->getSecond()) ValueT(std::forward<ValueArgs>(Values)...);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/7.2.1/utility:70:0,
+                 from /usr/include/c++/7.2.1/algorithm:60,
+                 from /usr/include/llvm/ADT/STLExtras.h:20,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_pair.h:293:17: note: candidate: constexpr std::pair<_T1, _T2>::pair(std::pair<_T1, _T2>&&) [with _T1 = llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT; _T2 = long unsigned int]
+       constexpr pair(pair&&) = default;
+                 ^~~~
+/usr/include/c++/7.2.1/bits/stl_pair.h:293:17: note:   candidate expects 1 argument, 0 provided
+/usr/include/c++/7.2.1/bits/stl_pair.h:292:17: note: candidate: constexpr std::pair<_T1, _T2>::pair(const std::pair<_T1, _T2>&) [with _T1 = llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT; _T2 = long unsigned int]
+       constexpr pair(const pair&) = default;
+                 ^~~~
+/usr/include/c++/7.2.1/bits/stl_pair.h:292:17: note:   candidate expects 1 argument, 0 provided
+/usr/include/c++/7.2.1/bits/stl_pair.h:289:21: note: candidate: template<class _U1, class _U2, typename std::enable_if<(std::_PCC<((! std::is_same<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, _U1>::value) || (! std::is_same<long unsigned int, _U2>::value)), llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, long unsigned int>::_ConstructiblePair<_U1, _U2>() && (! std::_PCC<((! std::is_same<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, _U1>::value) || (! std::is_same<long unsigned int, _U2>::value)), llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, long unsigned int>::_ImplicitlyConvertiblePair<_U1, _U2>())), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(const std::pair<_U1, _U2>&)
+  explicit constexpr pair(const pair<_U1, _U2>& __p)
+                     ^~~~
+/usr/include/c++/7.2.1/bits/stl_pair.h:289:21: note:   template argument deduction/substitution failed:
+In file included from bracket_list.hpp:1:0,
+                 from bracket_list.cpp:1:
+/usr/include/llvm/ADT/DenseMap.h:474:5: note:   candidate expects 1 argument, 0 provided
+     ::new (&TheBucket->getSecond()) ValueT(std::forward<ValueArgs>(Values)...);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/7.2.1/utility:70:0,
+                 from /usr/include/c++/7.2.1/algorithm:60,
+                 from /usr/include/llvm/ADT/STLExtras.h:20,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_pair.h:280:19: note: candidate: template<class _U1, class _U2, typename std::enable_if<(std::_PCC<((! std::is_same<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, _U1>::value) || (! std::is_same<long unsigned int, _U2>::value)), llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, long unsigned int>::_ConstructiblePair<_U1, _U2>() && std::_PCC<((! std::is_same<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, _U1>::value) || (! std::is_same<long unsigned int, _U2>::value)), llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, long unsigned int>::_ImplicitlyConvertiblePair<_U1, _U2>()), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(const std::pair<_U1, _U2>&)
+         constexpr pair(const pair<_U1, _U2>& __p)
+                   ^~~~
+/usr/include/c++/7.2.1/bits/stl_pair.h:280:19: note:   template argument deduction/substitution failed:
+In file included from bracket_list.hpp:1:0,
+                 from bracket_list.cpp:1:
+/usr/include/llvm/ADT/DenseMap.h:474:5: note:   candidate expects 1 argument, 0 provided
+     ::new (&TheBucket->getSecond()) ValueT(std::forward<ValueArgs>(Values)...);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/7.2.1/utility:70:0,
+                 from /usr/include/c++/7.2.1/algorithm:60,
+                 from /usr/include/llvm/ADT/STLExtras.h:20,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_pair.h:258:26: note: candidate: template<class _U1, class _U2, typename std::enable_if<(_ConstructiblePair<_U1, _U2>() && (! _ImplicitlyConvertiblePair<_U1, _U2>())), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(const _T1&, const _T2&)
+       explicit constexpr pair(const _T1& __a, const _T2& __b)
+                          ^~~~
+/usr/include/c++/7.2.1/bits/stl_pair.h:258:26: note:   template argument deduction/substitution failed:
+In file included from bracket_list.hpp:1:0,
+                 from bracket_list.cpp:1:
+/usr/include/llvm/ADT/DenseMap.h:474:5: note:   candidate expects 2 arguments, 0 provided
+     ::new (&TheBucket->getSecond()) ValueT(std::forward<ValueArgs>(Values)...);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/7.2.1/utility:70:0,
+                 from /usr/include/c++/7.2.1/algorithm:60,
+                 from /usr/include/llvm/ADT/STLExtras.h:20,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_pair.h:249:17: note: candidate: template<class _U1, class _U2, typename std::enable_if<(_ConstructiblePair<_U1, _U2>() && _ImplicitlyConvertiblePair<_U1, _U2>()), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(const _T1&, const _T2&)
+       constexpr pair(const _T1& __a, const _T2& __b)
+                 ^~~~
+/usr/include/c++/7.2.1/bits/stl_pair.h:249:17: note:   template argument deduction/substitution failed:
+In file included from bracket_list.hpp:1:0,
+                 from bracket_list.cpp:1:
+/usr/include/llvm/ADT/DenseMap.h:474:5: note:   candidate expects 2 arguments, 0 provided
+     ::new (&TheBucket->getSecond()) ValueT(std::forward<ValueArgs>(Values)...);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/7.2.1/utility:70:0,
+                 from /usr/include/c++/7.2.1/algorithm:60,
+                 from /usr/include/llvm/ADT/STLExtras.h:20,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_pair.h:231:26: note: candidate: template<class _U1, class _U2, typename std::enable_if<std::__and_<std::is_default_constructible<_Tp>, std::is_default_constructible<_Dp>, std::__not_<std::__and_<std::__is_implicitly_default_constructible<_U1>, std::__is_implicitly_default_constructible<_U2> > > >::value, bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair()
+       explicit constexpr pair()
+                          ^~~~
+/usr/include/c++/7.2.1/bits/stl_pair.h:231:26: note:   template argument deduction/substitution failed:
+/usr/include/c++/7.2.1/bits/stl_pair.h:230:59: error: no type named ‘type’ in ‘struct std::enable_if<false, bool>’
+                                    ::value, bool>::type = false>
+                                                           ^~~~~
+/usr/include/c++/7.2.1/bits/stl_pair.h:230:59: note: invalid template non-type parameter
+/usr/include/c++/7.2.1/bits/stl_pair.h:218:26: note: candidate: template<class _U1, class _U2, typename std::enable_if<std::__and_<std::__is_implicitly_default_constructible<_U1>, std::__is_implicitly_default_constructible<_U2> >::value, bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair()
+       _GLIBCXX_CONSTEXPR pair()
+                          ^~~~
+/usr/include/c++/7.2.1/bits/stl_pair.h:218:26: note:   template argument deduction/substitution failed:
+/usr/include/c++/7.2.1/bits/stl_pair.h:216:59: error: no type named ‘type’ in ‘struct std::enable_if<false, bool>’
+                                    ::value, bool>::type = true>
+                                                           ^~~~
+/usr/include/c++/7.2.1/bits/stl_pair.h:216:59: note: invalid template non-type parameter
+In file included from bracket_list.hpp:4:0,
+                 from bracket_list.cpp:1:
+/usr/include/llvm/ADT/PointerIntPair.h: In instantiation of ‘static intptr_t llvm::PointerIntPairInfo<PointerT, IntBits, PtrTraits>::updatePointer(intptr_t, PointerT) [with PointerT = llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT; unsigned int IntBits = 1; PtrTraits = llvm::PointerLikeTypeTraits<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT>; intptr_t = long int]’:
+/usr/include/llvm/ADT/PointerIntPair.h:75:48:   required from ‘void llvm::PointerIntPair<PointerTy, IntBits, IntType, PtrTraits, Info>::setPointerAndInt(PointerTy, IntType) [with PointerTy = llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT; unsigned int IntBits = 1; IntType = llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::EdgeKind; PtrTraits = llvm::PointerLikeTypeTraits<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT>; Info = llvm::PointerIntPairInfo<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, 1, llvm::PointerLikeTypeTraits<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT> >]’
+/usr/include/llvm/ADT/PointerIntPair.h:52:21:   required from ‘llvm::PointerIntPair<PointerTy, IntBits, IntType, PtrTraits, Info>::PointerIntPair(PointerTy, IntType) [with PointerTy = llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT; unsigned int IntBits = 1; IntType = llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::EdgeKind; PtrTraits = llvm::PointerLikeTypeTraits<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT>; Info = llvm::PointerIntPairInfo<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT, 1, llvm::PointerLikeTypeTraits<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT> >]’
+bracket_list.hpp:202:56:   required from ‘llvm::NodeLoopEquivalence<RT, AllocatorT>::EdgeT::EdgeT(llvm::NodeLoopEquivalence<RT, AllocatorT>::NodeT, llvm::NodeLoopEquivalence<RT, AllocatorT>::EdgeKind) [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator]’
+bracket_list.hpp:372:17:   required from ‘void llvm::NodeLoopEquivalence<RT, AllocatorT>::dfsVisit() [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator]’
+bracket_list.hpp:449:13:   required from ‘llvm::NodeLoopEquivalence<RT, AllocatorT>::NodeLoopEquivalence(const FuncT&) [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator; llvm::NodeLoopEquivalence<RT, AllocatorT>::FuncT = llvm::Function]’
+bracket_list.hpp:487:57:   required from here
+/usr/include/llvm/ADT/PointerIntPair.h:158:63: error: ‘getAsVoidPointer’ is not a member of ‘llvm::PointerLikeTypeTraits<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::NodeT>’
+         reinterpret_cast<intptr_t>(PtrTraits::getAsVoidPointer(Ptr));
+                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~
+In file included from /usr/include/c++/7.2.1/bits/stl_tempbuf.h:60:0,
+                 from /usr/include/c++/7.2.1/bits/stl_algo.h:62,
+                 from /usr/include/c++/7.2.1/algorithm:62,
+                 from /usr/include/llvm/ADT/STLExtras.h:20,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_construct.h: In instantiation of ‘void std::_Construct(_T1*, _Args&& ...) [with _T1 = llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSNodeT; _Args = {llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSNodeT}]’:
+/usr/include/c++/7.2.1/bits/stl_uninitialized.h:83:18:   required from ‘static _ForwardIterator std::__uninitialized_copy<_TrivialValueTypes>::__uninit_copy(_InputIterator, _InputIterator, _ForwardIterator) [with _InputIterator = std::move_iterator<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSNodeT*>; _ForwardIterator = llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSNodeT*; bool _TrivialValueTypes = false]’
+/usr/include/c++/7.2.1/bits/stl_uninitialized.h:134:15:   required from ‘_ForwardIterator std::uninitialized_copy(_InputIterator, _InputIterator, _ForwardIterator) [with _InputIterator = std::move_iterator<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSNodeT*>; _ForwardIterator = llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSNodeT*]’
+/usr/include/c++/7.2.1/bits/stl_uninitialized.h:289:37:   required from ‘_ForwardIterator std::__uninitialized_copy_a(_InputIterator, _InputIterator, _ForwardIterator, std::allocator<_Tp>&) [with _InputIterator = std::move_iterator<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSNodeT*>; _ForwardIterator = llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSNodeT*; _Tp = llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSNodeT]’
+/usr/include/c++/7.2.1/bits/stl_vector.h:1263:35:   required from ‘std::vector<_Tp, _Alloc>::pointer std::vector<_Tp, _Alloc>::_M_allocate_and_copy(std::vector<_Tp, _Alloc>::size_type, _ForwardIterator, _ForwardIterator) [with _ForwardIterator = std::move_iterator<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSNodeT*>; _Tp = llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSNodeT; _Alloc = std::allocator<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSNodeT>; std::vector<_Tp, _Alloc>::pointer = llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSNodeT*; std::vector<_Tp, _Alloc>::size_type = long unsigned int]’
+/usr/include/c++/7.2.1/bits/vector.tcc:73:40:   required from ‘void std::vector<_Tp, _Alloc>::reserve(std::vector<_Tp, _Alloc>::size_type) [with _Tp = llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSNodeT; _Alloc = std::allocator<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSNodeT>; std::vector<_Tp, _Alloc>::size_type = long unsigned int]’
+bracket_list.hpp:365:5:   required from ‘void llvm::NodeLoopEquivalence<RT, AllocatorT>::dfsVisit() [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator]’
+bracket_list.hpp:449:13:   required from ‘llvm::NodeLoopEquivalence<RT, AllocatorT>::NodeLoopEquivalence(const FuncT&) [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator; llvm::NodeLoopEquivalence<RT, AllocatorT>::FuncT = llvm::Function]’
+bracket_list.hpp:487:57:   required from here
+/usr/include/c++/7.2.1/bits/stl_construct.h:75:7: error: use of deleted function ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSNodeT::DFSNodeT(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSNodeT&&)’
+     { ::new(static_cast<void*>(__p)) _T1(std::forward<_Args>(__args)...); }
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:236:9: note: ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSNodeT::DFSNodeT(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSNodeT&&)’ is implicitly deleted because the default definition would be ill-formed:
+   class DFSNodeT {
+         ^~~~~~~~
+bracket_list.hpp:236:9: error: use of deleted function ‘llvm::internal::BracketListT<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >, llvm::MallocAllocator>::BracketListT(llvm::internal::BracketListT<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >, llvm::MallocAllocator>&&)’
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:100:9: note: ‘llvm::internal::BracketListT<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >, llvm::MallocAllocator>::BracketListT(llvm::internal::BracketListT<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >, llvm::MallocAllocator>&&)’ is implicitly deleted because the default definition would be ill-formed:
+   class BracketListT {
+         ^~~~~~~~~~~~
+bracket_list.hpp:100:9: error: use of deleted function ‘llvm::internal::idlist<llvm::internal::BracketT<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> > > >::idlist(llvm::internal::idlist<llvm::internal::BracketT<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> > > >&&)’
+bracket_list.hpp:74:9: note: ‘llvm::internal::idlist<llvm::internal::BracketT<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> > > >::idlist(llvm::internal::idlist<llvm::internal::BracketT<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> > > >&&)’ is implicitly deleted because the default definition would be ill-formed:
+   class idlist : public idlist_impl {
+         ^~~~~~
+bracket_list.hpp:74:9: error: cannot bind non-const lvalue reference of type ‘llvm::internal::idlist_impl&’ to an rvalue of type ‘llvm::internal::idlist_impl’
+bracket_list.hpp:31:5: note:   initializing argument 1 of ‘llvm::internal::idlist_impl::idlist_impl(llvm::internal::idlist_impl&)’
+     idlist_impl(idlist_impl & p) {
+     ^~~~~~~~~~~
+bracket_list.hpp:100:9: error: use of deleted function ‘llvm::internal::idlist<llvm::internal::BracketT<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> > > >::idlist(llvm::internal::idlist<llvm::internal::BracketT<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> > > >&&)’
+   class BracketListT {
+         ^~~~~~~~~~~~
+In file included from /usr/include/c++/7.2.1/bits/stl_tempbuf.h:60:0,
+                 from /usr/include/c++/7.2.1/bits/stl_algo.h:62,
+                 from /usr/include/c++/7.2.1/algorithm:62,
+                 from /usr/include/llvm/ADT/STLExtras.h:20,
+                 from /usr/include/llvm/ADT/StringRef.h:13,
+                 from /usr/include/llvm/ADT/StringMap.h:17,
+                 from /usr/include/llvm/Support/Host.h:17,
+                 from /usr/include/llvm/ADT/Hashing.h:49,
+                 from /usr/include/llvm/ADT/ArrayRef.h:13,
+                 from /usr/include/llvm/ADT/DenseMapInfo.h:17,
+                 from /usr/include/llvm/ADT/DenseMap.h:17,
+                 from bracket_list.hpp:1,
+                 from bracket_list.cpp:1:
+/usr/include/c++/7.2.1/bits/stl_construct.h: In instantiation of ‘void std::_Construct(_T1*, _Args&& ...) [with _T1 = llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT; _Args = {}]’:
+/usr/include/c++/7.2.1/bits/stl_uninitialized.h:527:18:   required from ‘static _ForwardIterator std::__uninitialized_default_n_1<_TrivialValueType>::__uninit_default_n(_ForwardIterator, _Size) [with _ForwardIterator = llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT*; _Size = long unsigned int; bool _TrivialValueType = false]’
+/usr/include/c++/7.2.1/bits/stl_uninitialized.h:583:20:   required from ‘_ForwardIterator std::__uninitialized_default_n(_ForwardIterator, _Size) [with _ForwardIterator = llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT*; _Size = long unsigned int]’
+/usr/include/c++/7.2.1/bits/stl_uninitialized.h:645:44:   required from ‘_ForwardIterator std::__uninitialized_default_n_a(_ForwardIterator, _Size, std::allocator<_Tp>&) [with _ForwardIterator = llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT*; _Size = long unsigned int; _Tp = llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT]’
+/usr/include/c++/7.2.1/bits/vector.tcc:563:35:   required from ‘void std::vector<_Tp, _Alloc>::_M_default_append(std::vector<_Tp, _Alloc>::size_type) [with _Tp = llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT; _Alloc = std::allocator<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT>; std::vector<_Tp, _Alloc>::size_type = long unsigned int]’
+/usr/include/c++/7.2.1/bits/stl_vector.h:692:21:   required from ‘void std::vector<_Tp, _Alloc>::resize(std::vector<_Tp, _Alloc>::size_type) [with _Tp = llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT; _Alloc = std::allocator<llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT>; std::vector<_Tp, _Alloc>::size_type = long unsigned int]’
+bracket_list.hpp:368:5:   required from ‘void llvm::NodeLoopEquivalence<RT, AllocatorT>::dfsVisit() [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator]’
+bracket_list.hpp:449:13:   required from ‘llvm::NodeLoopEquivalence<RT, AllocatorT>::NodeLoopEquivalence(const FuncT&) [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator; llvm::NodeLoopEquivalence<RT, AllocatorT>::FuncT = llvm::Function]’
+bracket_list.hpp:487:57:   required from here
+/usr/include/c++/7.2.1/bits/stl_construct.h:75:7: error: no matching function for call to ‘llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT::DFSStackNodeT()’
+     { ::new(static_cast<void*>(__p)) _T1(std::forward<_Args>(__args)...); }
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from bracket_list.cpp:1:0:
+bracket_list.hpp:274:5: note: candidate: llvm::NodeLoopEquivalence<RT, AllocatorT>::DFSStackNodeT::DFSStackNodeT(llvm::NodeLoopEquivalence<RT, AllocatorT>::EdgeT, llvm::NodeLoopEquivalence<RT, AllocatorT>::TimeStepT&, bool) [with RT = llvm::RegionTraits<llvm::Function>; AllocatorT = llvm::MallocAllocator; llvm::NodeLoopEquivalence<RT, AllocatorT>::TimeStepT = long unsigned int]
+     DFSStackNodeT(EdgeT Edge_, TimeStepT & DFSNumber_, bool PalVisited = false) : Edge(Edge_), DFSNumber(&DFSNumber_, PalVisited) {
+     ^~~~~~~~~~~~~
+bracket_list.hpp:274:5: note:   candidate expects 3 arguments, 0 provided
+bracket_list.hpp:272:9: note: candidate: constexpr llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT::DFSStackNodeT(const llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT&)
+   class DFSStackNodeT {
+         ^~~~~~~~~~~~~
+bracket_list.hpp:272:9: note:   candidate expects 1 argument, 0 provided
+bracket_list.hpp:272:9: note: candidate: constexpr llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT::DFSStackNodeT(llvm::NodeLoopEquivalence<llvm::RegionTraits<llvm::Function> >::DFSStackNodeT&&)
+bracket_list.hpp:272:9: note:   candidate expects 1 argument, 0 provided
