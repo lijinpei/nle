@@ -3,6 +3,7 @@
 
 #include "llvm/ADT/DenseMapInfo.h"
 #include "llvm/ADT/PointerIntPair.h"
+#include "llvm/Support/PointerLikeTypeTraits.h"
 
 namespace llvm {
 namespace NLE_internal {
@@ -16,20 +17,17 @@ enum EdgeKind : bool { EK_NonSplitEdge = false, EK_SplitEdge = true };
 
 /* We can not sub class this class in NodeLoopEquivalence because we need to paitial specialize DenseMapInfo for this class */
 template <class BlockT>
-class Node {
-private:
-  using UnderLayingT = PointerIntPair<const BlockT*, 1, NodeKind>;
-  UnderLayingT Node_;
-  static UnderLayingT ToUnderLaying(const Node & N) {
-    return N.Node_;
-  }
-  Node(const UnderLayingT & U) : Node(U.getPointer(), U.getInt()) {}
-  friend struct DenseMapInfo<Node>;
+class Node : public PointerIntPair<const BlockT*, 1, NodeKind> {
 public:
-  Node(const BlockT *BB, NodeKind NK) : Node_(BB, NK) {}
-  bool isEntry() { return Node_.getInt() == NK_Entry; }
-  const BlockT* getBlock() const { return Node_.getPointer(); }
-  Node getPal() { return {Node_.getPointer(), NKPal(Node_.getInt())}; }
+  using BaseT = PointerIntPair<const BlockT*, 1, NodeKind>;
+  Node(const BlockT *BB, NodeKind NK) : BaseT(BB, NK) {}
+  bool isEntry() { return this->getInt() == NK_Entry; }
+  const BlockT* getBlock() const { return this->getPointer(); }
+  Node getPal() { return {this->getPointer(), NKPal(this->getInt())}; }
+private:
+  friend class DenseMapInfo<Node>;
+  friend class PointerLikeTypeTraits<Node>;
+  Node(BaseT B) : BaseT(B) {}
 };
 
 template <class BlockT>
@@ -41,12 +39,12 @@ private:
   // is a frond) node in the spanning tree of the undirected graph
   PointerIntPair<NodeT, 1, EdgeKind> CNode;
 public:
+  Edge() = default;
   Edge(NodeT CNode_, EdgeKind EK) : CNode(CNode_, EK) {}
   bool isSplitEdge() { return CNode.getInt() == EK_SplitEdge; }
   NodeT getChildNode() { return CNode.getPointer(); }
   Edge getChildPalEdge() { return {getChildNode().getPal(), EK_SplitEdge}; }
 };
-
 
 }  // namespcae NLE_internal
 
@@ -54,7 +52,7 @@ template <class BlockT>
 struct DenseMapInfo<NLE_internal::Node<BlockT>> {
 private:
    using T = NLE_internal::Node<BlockT>;
-   using DMI1 = DenseMapInfo<typename T::UnderLayingT>;
+   using DMI1 = DenseMapInfo<typename T::BaseT>;
 public:
    static T getEmptyKey() {
      return {DMI1::getEmptyKey()};
@@ -65,14 +63,34 @@ public:
    }
  
    static unsigned getHashValue(T V) {
-     return DMI1::getHashValue(T::ToUnderLaying(V));
+     return DMI1::getHashValue(V);
    }
  
   static bool isEqual(const T &LHS, const T &RHS) {
-    return T::ToUnderLaying(LHS) == T::ToUnderLaying(RHS);
+    return DMI1::isEqual(LHS, RHS);
   }
 };
 
+template <typename BlockT>
+struct PointerLikeTypeTraits<NLE_internal::Node<BlockT>> {
+private:
+  using T = NLE_internal::Node<BlockT>;
+  using PLTT1 = PointerLikeTypeTraits<typename T::BaseT>;
+public:
+  static inline void *
+  getAsVoidPointer(const T &P) {
+    return P.getOpaqueValue();
+  }
+  static inline T 
+  getFromVoidPointer(void *P) {
+    return PLTT1::getFromOpaqueValue(P);
+  }
+  static inline T
+  getFromVoidPointer(const void *P) {
+    return PLTT1::getFromOpaqueValue(P);
+  }
+  enum { NumLowBitsAvailable = PLTT1::NumLowBitsAvailable };
+};
 }  // namespace llvm
 
 #endif  // NODEEDGE_HPP
