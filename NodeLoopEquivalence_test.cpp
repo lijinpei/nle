@@ -1,10 +1,10 @@
 #include "NodeLoopEquivalence.hpp"
-#include "NodeLoopEquivalenceInfo.hpp"
 
 #include "llvm/IR/Function.h"
+#include "llvm/IR/CFG.h"
 
 using namespace llvm;
 
 int main() {
-  NLE_internal::NodeLoopEquivalence<NodeLoopEquivalenceTraits<Function>> nle(*reinterpret_cast<Function*>(main));
+  NodeLoopEquivalence<Function> nle(*reinterpret_cast<Function*>(main));
 }

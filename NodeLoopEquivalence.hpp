@@ -15,36 +15,38 @@ class NodeLoopEquivalence {
 public:
   enum NodeKind : bool { NK_Exit = false, NK_Entry = true };
   enum EdgeKind : bool { EK_NonSplitEdge = false, EK_SplitEdge = true };
-  using FuncT = std::remove_cv_t<std::remove_reference_t<<GraphType>>;
-  using NodeRef = GraphTraits<const FuncT*>::NodeRef;
-  using SuccItorT = GraphTraits<NodeRef>::ChildIteratorType;
-  using PredItorT = GraphTraits<Inverse<NodeRef>>::ChildIteratorType;
+  using FuncT = std::remove_cv_t<std::remove_reference_t<GraphType>>;
+  using NodeRef = typename GraphTraits<const FuncT*>::NodeRef;
+  using BlockT = std::remove_cv_t<std::remove_pointer_t<NodeRef>>;
+  using SuccItorT = typename GraphTraits<NodeRef>::ChildIteratorType;
+  using PredItorT = typename GraphTraits<Inverse<NodeRef>>::ChildIteratorType;
+  template <NodeKind NK>
+    using ItorT = std::conditional_t<NK == NK_Entry, PredItorT, SuccItorT>;
   using NodeT = PointerIntPair<NodeRef, 1, NodeKind>;
-  using EdgeT = PointerIntPair<Node, 1, EdgeKind>;
+  using EdgeT = PointerIntPair<NodeT, 1, EdgeKind>;
   using TimeStepT = size_t;
 
-  static NodeRef getBB(NodeT N) {
-    return N.getPointer();
+  static NodeT getPal(NodeT N) {
+    NodeKind NK = N.getInt() == NK_Exit ? NK_Entry : NK_Exit;
+    return {N.getPointer(), NK};
   }
 
-  static NodeRef getChildBB(EdgeT E) {
-    return getBB(E.getPointer());
-  }
+  static NodeRef getBB(NodeT N) { return N.getPointer(); }
 
-  static bool isEntry(NodeT N) {
-    return N.getInt() == NK_Entry;
-  }
+  static NodeRef getChildBB(EdgeT E) { return getBB(E.getPointer()); }
 
-  static bool childIsEntry(EdgeT E) {
-    return isEntry(E.getPointer());
-  }
+  static bool isEntry(NodeT N) { return N.getInt() == NK_Entry; }
 
-  static bool isSplitEdge(EdgeT E) {
-    return E.getInt() == EK_SplitEdge;
-  }
+  static bool childIsEntry(EdgeT E) { return isEntry(E.getPointer()); }
 
-  static EdgeT childNodePalEdge(Edge & E) {
-    return {{getChildBB(E), !childIsEntry(E)}, EK_SplitEdge};
+  static bool isSplitEdge(EdgeT E) { return E.getInt() == EK_SplitEdge; }
+
+  static bool isNullEdge(EdgeT E) { return !E.getOpaqueValue(); }
+
+  static void setNullEdge(EdgeT &E) { E.setFromOpaqueValue(nullptr); }
+
+  static EdgeT childNodePalEdge(EdgeT &E) {
+    return {getPal(E.getPointer()), EK_SplitEdge};
   }
 
   struct Bracket {
@@ -52,8 +54,8 @@ public:
     Bracket * Next;
   };
 
-  Bracket* newBracket(Edge E) {
-    auto* NB = reinterpret_cast<Bracket*>(Allocator.allocate(sizeof(Bracket)));
+  Bracket* newBracket(EdgeT E) {
+    auto* NB = reinterpret_cast<Bracket*>(Allocator.template Allocate<Bracket>(1));
     NB->Edge = E;
     return NB;
   }
@@ -105,24 +107,24 @@ public:
 
     void dropBrackets() {
       for (auto B : BracketsToDelete) {
-        B->EdgeLabel = 0;
+        setNullEdge(B->Edge);
       }
     }
 
     MarkerT getMarker() {
-      while (Head && !Head->Label_) {
+      while (Head && isNullEdge(Head->Edge)) {
         Head = Head->Next;
       }
       if (!Head) {
         Tail = nullptr;
-        return NullMarker;
+        return NullMarker();
       } else {
-        return {Head->Edge->getPointer(), Size};
+        return {Head->Edge.getPointer(), Size};
       }
     }
 
     Bracket* front() {
-      while (Head && !Head->Label_) {
+      while (Head && isNullEdge(Head->Edge)) {
         Head = Head->Next;
       }
       if (!Head) {
@@ -144,47 +146,52 @@ public:
       PredItorT Pred;
     };
 
-    DFSStackNode(EdgeT Edge_, TimeStepT & TS_, bool PalVisited) : DFSNumber(&TS, PalVisited), Edge(Edge_) {
+    DFSStackNode(EdgeT Edge_, TimeStepT & TS, bool PalVisited) : DFSNumber(&TS, PalVisited), Edge(Edge_) {
       if (childIsEntry(Edge)) {
         Pred = pred_begin(getChildBB(Edge));
       } else {
         Succ = succ_begin(getChildBB(Edge));
       }
     }
-    // Those are utility function for visiting the stack
-    template <NodeKind NK>
-    std::enable_if_t<NK == NK_Entry, PredItorT> current_pos() {
-      return Pred;
-    }
-
-    template <NodeKind NK>
-    std::enable_if_t<NK == NK_Entry, PredItorT> end_pos() {
-      return pred_end(getChildBB(Edge));
-    }
-
-    EdgeT getEdge(PredItorT P) {
-      return {{&*P, NK_Exit}, EK_NonSplitEdge};
-    }
 
     void setItor(PredItorT P) { Pred = P; }
-
-    template <NodeKind NK>
-    std::enable_if_t<NK == NK_Exit, SuccItorT> current_pos() {
-      return Succ;
-    }
-
-    template <NodeKind NK>
-    std::enable_if_t<NK == NK_Exit, SuccItorT> end_pos() {
-      return succ_end(getChildBB(Edge));
-    }
-
-    EdgeT getEdge(SuccItorT S) {
-      return {{&*S, NK_Entry}, EK_NonSplitEdge};
-    }
 
     void setItor(SuccItorT S) { Succ = S; }
 
   };
+
+  // Those are utility function for visiting the stack
+  template <NodeKind NK>
+  static std::enable_if_t<NK == NK_Entry, PredItorT>
+  current_pos(DFSStackNode &Node) {
+    return Node.Pred;
+  }
+
+  template <NodeKind NK>
+  static std::enable_if_t<NK == NK_Entry, PredItorT>
+  end_pos(DFSStackNode &Node) {
+    return pred_end(getChildBB(Node.Edge));
+  }
+
+  template <NodeKind NK>
+  static std::enable_if_t<NK == NK_Exit, SuccItorT>
+  current_pos(DFSStackNode &Node) {
+    return Node.Succ;
+  }
+
+  template <NodeKind NK>
+  static std::enable_if_t<NK == NK_Exit, SuccItorT>
+  end_pos(DFSStackNode &Node) {
+    return succ_end(getChildBB(Node.Edge));
+  }
+
+  static EdgeT getEdge(PredItorT P) {
+    return {NodeT(*P, NK_Exit), EK_NonSplitEdge};
+  }
+
+  static EdgeT getEdge(SuccItorT S) {
+    return {{*S, NK_Entry}, EK_NonSplitEdge};
+  }
 
 private:
   const FuncT & Func;
@@ -192,8 +199,8 @@ private:
   using BlockMakerMapT = DenseMap<const BlockT*, MarkerT>;
   BlockMakerMapT BMM;
   DenseMap<NodeT, TimeStepT> DFSNumbers;
-  std::vector<DFSNodeT> DFSQueue;
-  std::vector<DFSStackNodeT> DFSStack;
+  std::vector<DFSNode> DFSQueue;
+  std::vector<DFSStackNode> DFSStack;
   TimeStepT BracketLabel;
 
   template <NodeKind NK>
@@ -206,14 +213,14 @@ private:
       }
       return false;
     };
-    DFSStackNodeT & tos = DFSStack.back();
+    DFSStackNode & tos = DFSStack.back();
     if (!tos.DFSNumber.getInt()) {
       tos.DFSNumber.setInt(true);
       if (tryVisit(childNodePalEdge(tos.Edge), true)) {
         return;
       }
     }
-    for (ItorT<NK> child = tos.current_pos<NK>(), end = tos.end_pos<NK>(); child != end; ++child) {
+    for (ItorT<NK> child = current_pos<NK>(tos), end = end_pos<NK>(tos); child != end; ++child) {
       if (tryVisit(getEdge(child), false)) {
         tos.setItor(child);
         return;
@@ -236,9 +243,7 @@ private:
 
     const BlockT & entryBB = Func.getEntryBlock();
     NodeT entry{&entryBB, NK_Exit};
-    DFSStack[0] = {{entry, EK_NonSplitEdge}, DFSNumbers[entry]};
-    // set pal visited
-    DFSStack[0].DFSNumber.setInt(true);
+    DFSStack.emplace_back(EdgeT(entry, EK_NonSplitEdge), DFSNumbers[entry], true);
     while (DFSStack.size()) {
       if (childIsEntry(DFSStack.back().Edge)) {
         dfsVisitStackTop<NK_Entry>();
@@ -249,31 +254,31 @@ private:
     DFSStack.clear();
   }
 
-  void punchMarkerHandleAdjacents(DFSNodeT &Node, TimeStepT MyNumber,
+  void punchMarkerHandleAdjacents(DFSNode &Node, TimeStepT MyNumber,
                                   TimeStepT &HighPt2, TimeStepT &HighPt_tmp) {
-    auto visitAdjacent = [](TimeStepT AdjNumber, EdgeKind EK) {
+    auto visitAdjacent = [&](TimeStepT AdjNumber, EdgeKind EK) {
       DFSNode &Adj = DFSQueue[AdjNumber - 1];
       if (AdjNumber < MyNumber) {
-        Node.mergeChild(Adj, HighPt2);
+        Node.mergeDFSNode(Adj, HighPt2);
       } else {
         HighPt_tmp = std::max(HighPt_tmp, AdjNumber);
         Node.addBracket(Adj, newBracket({Adj.Edge.getPointer(), EK}));
       }
     };
     NodeT child_node = Node.Edge.getPointer();
-    visitAdjacent(DFSNumbers[child_node.getPal()], true);
-    if (child_node.isEntry()) {
-      for (const BlockT *Pred : predecessors(child_node.getBlock())) {
-        visitAdjacent(DFSNumbers[{Pred, NK_Exit}], false);
+    visitAdjacent(DFSNumbers[getPal(child_node)], EK_SplitEdge);
+    if (isEntry(child_node)) {
+      for (const BlockT *Pred : predecessors(getBB(child_node))) {
+        visitAdjacent(DFSNumbers[{Pred, NK_Exit}], EK_NonSplitEdge);
       }
     } else {
-      for (const BlockT *Succ : successors(child_node.getBlock())) {
-        visitAdjacent(DFSNumbers[{Succ, NK_Entry}], false);
+      for (const BlockT *Succ : successors(getBB(child_node))) {
+        visitAdjacent(DFSNumbers[{Succ, NK_Entry}], EK_NonSplitEdge);
       }
     }
   }
 
-  void punchMarkerFinishVisit(DFSNodeT &Node, TimeStepT MyNumber, TimeStepT HighPt2, TimeStepT HighPt_tmp) {
+  void punchMarkerFinishVisit(DFSNode &Node, TimeStepT MyNumber, TimeStepT HighPt2, TimeStepT HighPt_tmp) {
     if (HighPt_tmp > Node.HighPt) {
       Node.HighPt = HighPt_tmp;
     }
@@ -298,8 +303,8 @@ private:
   void punchMarkers() {
     BracketLabel = 0;
     for (TimeStepT i = 0, e = DFSQueue.size(); i < e; ++i) {
-      DFSNodeT & dfs_node = DFSQueue[i];
-      dfs_node.deleteBrackets();
+      DFSNode & dfs_node = DFSQueue[i];
+      dfs_node.dropBrackets();
       TimeStepT HighPt_tmp = 0, HighPt2 = 0;
       punchMarkerHandleAdjacents(dfs_node, i + 1, HighPt2, HighPt_tmp);
       punchMarkerFinishVisit(dfs_node, i + 1, HighPt2, HighPt_tmp);
@@ -309,11 +314,11 @@ private:
 public:
 
   // valid marker's TimeStep won't be zero
-  static const NodeT NullNode = {nullptr, NK_Entry};
-  static const MarkerT NullMarker = {NullNode, 0};
+  static NodeT NullNode() { return NodeT(nullptr, NodeKind(false)); }
+  static MarkerT NullMarker() { return std::make_pair(NullNode(), 0); }
 
   static bool isNullMarker(const MarkerT & MA) {
-    return !MA.first;
+    return !MA.first.getPointer();
   }
 
   NodeLoopEquivalence(const FuncT & Func_) : Func(Func_) {
